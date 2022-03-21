@@ -1,28 +1,48 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import { Grid,Paper, Avatar, TextField, Button, Typography,Link } from '@material-ui/core'
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+const Login=()=>{
 
-import './Login.css';
-
-export default function Login({ setToken }) {
-    const [username, setUserName] = useState();
-    const [password, setPassword] = useState();
+    const paperStyle={padding :20,height:'70vh',width:280, margin:"20px auto"}
+    const avatarStyle={backgroundColor:'#1bbd7e'}
+    const btnstyle={margin:'8px 0'}
     return(
-        <div className="login-wrapper">
-            <h1>Please Log In</h1>
-            <form>
-                <label>
-                    <p>Username</p>
-                    <input type="text" onChange={e => setUserName(e.target.value)}/>
-                </label>
-                <label>
-                    <p>Password</p>
-                    <input type="password" onChange={e => setPassword(e.target.value)}/>
-                </label>
-                <div>
-                    <button type="submit">Submit</button>
-                </div>
-            </form>
-        </div>
+        <Grid>
+            <Paper elevation={10} style={paperStyle}>
+                <Grid align='center'>
+                    <Avatar style={avatarStyle}><LockOutlinedIcon/></Avatar>
+                    <h2><i>Hii Buddy:-></i></h2>
+                    <h2><i>Welcome Back</i></h2>
+                </Grid>
+                <TextField label='Username' placeholder='Enter username' fullWidth required/>
+                <TextField label='Password' placeholder='Enter password' type='password' fullWidth required/>
+                <FormControlLabel
+                    control={
+                        <Checkbox
+                            name="checkedB"
+                            color="green"
+                        />
+                    }
+                    label="Remember me"
+                />
+                <Button type='submit'  variant="contained" style={avatarStyle} fullWidth><b>Login</b></Button>
+                <Button type='submit'  variant="contained" style={btnstyle} size="small">Forget Password</Button><br></br>
+                <Button type='submit'  variant="contained" style={btnstyle} size="small">SignUp</Button>
+                {/*<Typography >*/}
+                {/*    <Link href="#" >*/}
+                {/*        Forgot password ?*/}
+                {/*    </Link>*/}
+                {/*</Typography>*/}
+                {/*<Typography > Do you have an account ?*/}
+                {/*    <Link href="#" >*/}
+                {/*        Sign Up*/}
+                {/*    </Link>*/}
+                {/*</Typography>*/}
+            </Paper>
+        </Grid>
     )
 }
 
+export default Login
