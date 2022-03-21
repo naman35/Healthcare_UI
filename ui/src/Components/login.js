@@ -3,18 +3,35 @@ import { Grid,Paper, Avatar, TextField, Button, Typography,Link } from '@materia
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import axios from "axios";
 const Login=()=>{
     const [username, setusername] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState('');
 
     function validateForm() {
         return username.length > 0 && password.length > 0;
     }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-    function handleSubmit(event) {
-        event.preventDefault();
-    }
-    const paperStyle={padding :20,height:'70vh',width:280, margin:"20px auto"}
+        const authObject = { 'username': username, 'password': password };
+
+
+        try {
+            await axios.get('//', { headers: authObject });
+
+            localStorage.setItem('username', username);
+            localStorage.setItem('password', password);
+
+            window.location.reload();
+            setError('');
+        } catch (err) {
+            setError('Oops, incorrect credentials.');
+        }
+    };
+
+    const paperStyle={padding :20,height:'70vh',width:400, margin:"20px auto"}
     const avatarStyle={backgroundColor:'#1bbd7e'}
     const btnstyle={margin:'8px 0'}
     return(
