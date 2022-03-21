@@ -1,0 +1,24 @@
+server:
+  port: 8999
+
+spring:
+  application:
+    name: api-gateway
+
+eureka:
+  instance:
+    hostname: localhost
+
+/*congiguration so that all service run after passing through api gateway*/
+cloud:
+  gateway:
+    routes:
+      - id: user-service
+       uri: lb://user-service      //lb for load balancing
+       predicates :
+         - Path=/user/**, /test/**        //for path more than 1 url we can give
+      - id: doctor-service
+       uri: lb://doctor-service
+       predicates:
+         - Path=/doctor/**
+
