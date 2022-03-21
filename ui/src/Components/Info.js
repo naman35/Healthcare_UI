@@ -1,4 +1,22 @@
 function Info(){
+    let obj = {
+        first: "",
+        last:"",
+        address:"",
+        email:"",
+        age:"",
+    };
+    fetch("http://a6b5-103-156-19-229.ngrok.io/getDetails",{
+        method:"GET",
+    })
+    .then((response) => response.json())
+    .then((responseData)=>{
+        document.getElementById("firstName").value = responseData[0].username;
+        document.getElementById("lastName").value = responseData[0].username;
+        document.getElementById("address").value = responseData[0].id;
+        document.getElementById("contactNo").value = responseData[0].role;
+        document.getElementById("age").value = responseData[0].id;
+    })
     function saveInfo(){
         let first = document.getElementById("firstName").value
         let last = document.getElementById("lastName").value
@@ -37,9 +55,9 @@ function Info(){
     return <>
     <div>
         <div>
-            <nav class="navbar" style={{backgroundColor:"gainsboro"}}>
-            <div class="container-fluid">
-                <span class="navbar-text">
+            <nav className="navbar" style={{backgroundColor:"gainsboro"}}>
+            <div className="container-fluid">
+                <span className="navbar-text">
                 Push-D Logo
                 </span>
                 <span>
@@ -69,7 +87,7 @@ function Info(){
                     </div>
                     <div style={{marginTop:"4px"}}> 
                         <label>Contact No</label>
-                        <input type="number" className="form-control" maxLength={10} id="contactNo" disabled={true}></input>
+                        <input type="text" className="form-control" id="contactNo" disabled={true}></input>
                     </div>
                     <div style={{marginTop:"4px"}}>
                         <label>Age</label>
