@@ -75,8 +75,8 @@ function Dashboard(){
             </div>
         </div>
         <div className="card shadow p-3 mb-5 bg-white rounded" style={{margin:"20px",backgroundColor:"white"}}>
-                <div className="card-body" id="overview">
-                    <div class="col-md-10" id="0">
+                <div className="card-body" id="overview" style={{textAlign:"left"}}>
+                    <div id="0">
                             <p><strong>OVERVIEW</strong></p>
                                 <p>The entire program is divided into two broad areas:
                                     Essential and optional.</p>
@@ -114,8 +114,8 @@ function Dashboard(){
                                 </div>
                     </div>
                 </div>
-                <div className="card-body"  style={{display:"none"}} id="signBoard">
-                    <div className="col-md-10 text-justify" id="1">
+                <div className="card-body"  style={{display:"none",textAlign:"left"}} id="signBoard">
+                    <div id="1">
                     <p><strong>SIGN BOARDS</strong></p>
                         <div className="row">
                             <div className="col-md-4">
@@ -216,8 +216,8 @@ function Dashboard(){
                         </div>
                     </div>
                 </div>
-                <div className="card-body"  style={{display:"none"}} id="tips">
-                    <div class="col-md-11 text-justify" id="2">
+                <div className="card-body"  style={{display:"none",textAlign:"left"}} id="tips">
+                    <div id="2">
 							
 							<p><strong>TIPS FOR COMPLETION</strong></p>
 							<p>
@@ -301,8 +301,8 @@ function Dashboard(){
 							</ul>
                     </div>
                 </div>
-                <div className="card-body" id="termUse" style={{display:"none"}}>
-                    <div class="col-md-11 hidden text-justify" id="3">
+                <div className="card-body" id="termUse" style={{display:"none",textAlign:"left"}}>
+                    <div id="3">
 						<p><strong>TERMS OF USE</strong></p><br></br>
 							<p>
 								<strong>The delimited scope and purpose of the Push-D

@@ -30,11 +30,6 @@ function Info(){
             contactNo:contact,
             age:age
         }
-        alert(person.firstName);
-        alert(person.lastName);
-        alert(person.age);
-        alert(person.address);
-        alert(person.contactNo);
         document.getElementById("firstName").disabled=true;
         document.getElementById("lastName").disabled=true;
         document.getElementById("address").disabled=true;
