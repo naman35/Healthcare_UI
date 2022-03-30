@@ -6,6 +6,7 @@ import Dashboard from "./Components/dashboard";
 import Info from "./Components/Info";
 import DoctorDashboard from "./Components/doctorDashboard";
 import PatientTrack from "./Components/patientTrack";
+import Analytics from "./Components/analytics";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path='/editProfile' element={<Info/>} />
             <Route path='/doctorDashboard' element={<DoctorDashboard/>} />
             <Route path='/patientTracker' element={<PatientTrack/>} />
+            <Route path='/analytics' element={<Analytics/>} />
 
         </Routes>
         </BrowserRouter>
