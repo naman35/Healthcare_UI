@@ -10,6 +10,8 @@ import Analytics from "./Components/analytics";
 import Quiz from "./Components/quiz/quiz";
 import Mainchat from "./Components/Chats/mainchat";
 import PreRegister from "./Components/pre_register_quiz";
+import Session from "./Components/session";
+import Bar from "./Components/bar"
 
 
 function App() {
@@ -28,6 +30,8 @@ function App() {
             <Route path='/mainchat' element={<Mainchat/>} />
             <Route path='/preRegister' element={<PreRegister/>} />
             <Route path='*' element={<p>"ERROR"</p>} />
+            <Route path='/session' element={<Session />} />
+            <Route path='/bar' element={<Bar/>} />
 
 
         </Routes>

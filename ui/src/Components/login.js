@@ -40,7 +40,7 @@ const Login=()=>{
             <Paper elevation={10} style={paperStyle}>
                 <Grid align='center'>
                     <Avatar style={avatarStyle}><LockOutlinedIcon/></Avatar>
-                    <h2><i>Hii Buddy:-></i></h2>
+                    <h2><i>Hii Buddy:</i></h2>
                     <h2><i>Welcome Back</i></h2>
                 </Grid>
                 <TextField  value={username} onChange={(e) => setusername(e.target.value)} label='Username' placeholder='Enter username' fullWidth required/>
