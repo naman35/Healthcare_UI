@@ -1,45 +1,38 @@
+import PatientTrack from "./patientTrack";
+
 function DoctorDashboard(){
-    // fetch("http://a6b5-103-156-19-229.ngrok.io/getDetails",{
-    //     method:"GET",
-    // })
-    //     .then((response) => response.json())
-    //     .then((responseData)=>{
-    //         document.getElementById("firstName").value = responseData[0].username;
-    //         document.getElementById("lastName").value = responseData[0].username;
-    //         document.getElementById("address").value = responseData[0].id;
-    //         document.getElementById("contactNo").value = responseData[0].role;
-    //         document.getElementById("age").value = responseData[0].id;
-    //     })
-    function saveInfo(){
-        let first = document.getElementById("firstName").value
-        let last = document.getElementById("lastName").value
-        let addr = document.getElementById("address").value
-        let contact = document.getElementById("contactNo").value
-        let age = document.getElementById("age").value
-        let person = {
-            firstName:first,
-            lastName:last,
-            address:addr,
-            contactNo:contact,
-            age:age
-        }
-        document.getElementById("firstName").disabled=true;
-        document.getElementById("lastName").disabled=true;
-        document.getElementById("address").disabled=true;
-        document.getElementById("contactNo").disabled=true;
-        document.getElementById("age").disabled=true;
-        document.getElementById("editBtn").style.display="block";
-        document.getElementById("saveBtn").style.display="none";
-    }
-    function editInfo(){
-        document.getElementById("firstName").disabled=false;
-        document.getElementById("lastName").disabled=false;
-        document.getElementById("address").disabled=false;
-        document.getElementById("contactNo").disabled=false;
-        document.getElementById("age").disabled=false;
-        document.getElementById("editBtn").style.display="none";
-        document.getElementById("saveBtn").style.display="block";
-    }
+    // function Redirect(val){
+    //     alert(val);
+    // }
+    fetch("http://0f76-119-161-98-68.ngrok.io/patientDetails/1",{
+        method:"GET",
+    })
+        .then((response) => response.json())
+        .then((responseData)=>{
+            console.log(responseData);
+            document.getElementById("patientsList").innerHTML='';
+            let sz = responseData.length;
+            console.log(sz);
+            let html = '';
+            for(let i=0;i<sz;i++)
+            {
+                let row = '';
+                if(i%2==0)
+                {
+                    row = '<a type="button" href="/patientTracker?id='+responseData[i].pid+'" class="list-group-item list-group-item-action" style="background-color:lightgreen;">'+responseData[i].username+
+                        '</a>';
+                }
+                else
+                {
+                    row = '<a type="button" href="/patientTracker?id='+responseData[i].pid+'" class="list-group-item list-group-item-action" style="background-color:white;">'+responseData[i].username+
+                        '</a>';
+                }
+                html=html+row;
+            }
+            document.getElementById("patientsList").innerHTML = html;
+        })
+
+
     return <>
         <div>
             <div>
@@ -62,15 +55,8 @@ function DoctorDashboard(){
                     <h3 style={{textAlign:"left"}}>
                         List of patients
                     </h3>
-                    <div className="list-group">
-                        <button type="button" className="list-group-item list-group-item-action" style={{backgroundColor:"lightgreen"}}>
-                            Raj Oberoi
-                        </button>
-                        <button type="button" className="list-group-item list-group-item-action" style={{backgroundColor:"white"}}>Virat Kohli</button>
-                        <button type="button" className="list-group-item list-group-item-action" style={{backgroundColor:"lightgreen"}}>James Bond
-                        </button>
-                        <button type="button" className="list-group-item list-group-item-action" style={{backgroundColor:"white"}}>Bhuvan Bam
-                        </button>
+                    <div className="list-group" id="patientsList">
+
                     </div>
                 </div>
             </div>
