@@ -12,8 +12,8 @@ const Bar =()=>{
         { argument: 'Tue', value: 20 },
         { argument: 'Wed', value: 10 },
         { argument: 'Thur', value: 50 },
-        { argument: 'Fri', value: 60 },
-        { argument: 'Sat', value: 60 },
+        { argument: 'Fri', value: 40 },
+        { argument: 'Sat', value: 30 },
         { argument: 'Sun', value: 50 },
 
       ];
@@ -25,7 +25,7 @@ const Bar =()=>{
             <ArgumentAxis />
             <ValueAxis />
         
-            <BarSeries valueField="value" argumentField="argument" />
+            <BarSeries valueField="value" argumentField="argument" color="#1bbd7e"/>
           </Chart>
         </Paper>
       );
