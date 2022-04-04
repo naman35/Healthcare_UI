@@ -8,8 +8,8 @@ import DoctorDashboard from "./Components/doctorDashboard";
 import PatientTrack from "./Components/patientTrack";
 import Analytics from "./Components/analytics";
 import Quiz from "./Components/quiz/quiz";
-import ChatFeed from "./Components/ChatFeed";
-import LoginForm from "./Components/LoginForm";
+import Mainchat from "./Components/Chats/mainchat";
+
 
 function App() {
   return (
@@ -24,8 +24,8 @@ function App() {
             <Route path='/patientTracker' element={<PatientTrack/>} />
             <Route path='/analytics' element={<Analytics/>} />
             <Route path='/quiz' element={<Quiz/>} />
-            <Route path='/ChatFeed' element={<ChatFeed/>} />
-            <Route path='/LoginForm' element={<LoginForm />} />
+            <Route path='/mainchat' element={<Mainchat/>} />
+
             <Route path='*' element={<p>ERROR</p>} />
 
         </Routes>
