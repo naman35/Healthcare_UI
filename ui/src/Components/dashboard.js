@@ -1,43 +1,44 @@
+import {Link} from 'react-router-dom'
 function Dashboard(){
     function showOverview(){
         document.getElementById("overview").style.display="block";
         document.getElementById("signBoard").style.display="none";
         document.getElementById("tips").style.display="none";
         document.getElementById("termUse").style.display="none";
-        document.getElementById("overviewBtn").style.backgroundColor="white";
-        document.getElementById("termUseBtn").style.backgroundColor="#A2F7BF";
-        document.getElementById("signBoardBtn").style.backgroundColor="#A2F7BF";
-        document.getElementById("tipsBtn").style.backgroundColor="#A2F7BF";
+        document.getElementById("overviewBtn").style.backgroundColor="#51b052";
+        document.getElementById("termUseBtn").style.backgroundColor="#218622";
+        document.getElementById("signBoardBtn").style.backgroundColor="#218622";
+        document.getElementById("tipsBtn").style.backgroundColor="#218622";
     }
     function showSign(){
         document.getElementById("overview").style.display="none";
         document.getElementById("signBoard").style.display="block";
         document.getElementById("tips").style.display="none";
         document.getElementById("termUse").style.display="none";
-        document.getElementById("signBoardBtn").style.backgroundColor="white";
-        document.getElementById("overviewBtn").style.backgroundColor="#A2F7BF";
-        document.getElementById("termUseBtn").style.backgroundColor="#A2F7BF";
-        document.getElementById("tipsBtn").style.backgroundColor="#A2F7BF";
+        document.getElementById("signBoardBtn").style.backgroundColor="#51b052";
+        document.getElementById("overviewBtn").style.backgroundColor="#218622";
+        document.getElementById("termUseBtn").style.backgroundColor="#218622";
+        document.getElementById("tipsBtn").style.backgroundColor="#218622";
     }
     function showTips(){
         document.getElementById("overview").style.display="none";
         document.getElementById("signBoard").style.display="none";
         document.getElementById("tips").style.display="block";
         document.getElementById("termUse").style.display="none";
-        document.getElementById("tipsBtn").style.backgroundColor="white";
-        document.getElementById("overviewBtn").style.backgroundColor="#A2F7BF";
-        document.getElementById("signBoardBtn").style.backgroundColor="#A2F7BF";
-        document.getElementById("termUseBtn").style.backgroundColor="#A2F7BF";
+        document.getElementById("tipsBtn").style.backgroundColor="#51b052";
+        document.getElementById("overviewBtn").style.backgroundColor="#218622";
+        document.getElementById("signBoardBtn").style.backgroundColor="#218622";
+        document.getElementById("termUseBtn").style.backgroundColor="#218622";
     }
     function showTerms(){
         document.getElementById("overview").style.display="none";
         document.getElementById("signBoard").style.display="none";
         document.getElementById("tips").style.display="none";
         document.getElementById("termUse").style.display="block";
-        document.getElementById("termUseBtn").style.backgroundColor="white";
-        document.getElementById("overviewBtn").style.backgroundColor="#A2F7BF";
-        document.getElementById("signBoardBtn").style.backgroundColor="#A2F7BF";
-        document.getElementById("tipsBtn").style.backgroundColor="#A2F7BF";
+        document.getElementById("termUseBtn").style.backgroundColor="#51b052";
+        document.getElementById("overviewBtn").style.backgroundColor="#218622";
+        document.getElementById("signBoardBtn").style.backgroundColor="#218622";
+        document.getElementById("tipsBtn").style.backgroundColor="#218622";
     }
     return <>
     <div>
@@ -59,18 +60,18 @@ function Dashboard(){
         <div style={{marginTop:"10px"}}>
             <div className="row" style={{textAlign:"center"}}>
                 <div className="col-md-6">
-                    <button id="overviewBtn" type="button" className="btn btn-success" style={{marginTop:"10px",backgroundColor:"white",color:"black",width:"40vw"}} onClick={showOverview}>Overview</button>
+                    <button id="overviewBtn" type="button" className="btn btn-success" style={{marginTop:"10px",backgroundColor:'#15983e',color:"white",width:"40vw"}} onClick={showOverview}>Overview</button>
                 </div>
                 <div className="col-md-6">
-                    <button id="signBoardBtn" type="button" className="btn btn-success" style={{marginTop:"10px",backgroundColor:"#A2F7BF",color:"black",width:"40vw"}} onClick={showSign}>Sign Boards</button>
+                    <button id="signBoardBtn" type="button" className="btn btn-success" style={{marginTop:"10px",backgroundColor:'#15983e',color:"white",width:"40vw"}} onClick={showSign}>Sign Boards</button>
                 </div>
             </div>
             <div className="row" style={{textAlign:"center"}}>
                 <div className="col-md-6">
-                    <button id="tipsBtn" type="button" className="btn btn-success" style={{marginTop:"10px",backgroundColor:"#A2F7BF",color:"black",width:"40vw"}} onClick={showTips}>Tips of Completion</button>
+                    <button id="tipsBtn" type="button" className="btn btn-success" style={{marginTop:"10px",backgroundColor:'#15983e',color:"white",width:"40vw"}} onClick={showTips}>Tips of Completion</button>
                 </div>
                 <div className="col-md-6">
-                    <button id="termUseBtn" type="button" className="btn btn-success" style={{marginTop:"10px",backgroundColor:"#A2F7BF",color:"black",width:"40vw"}} onClick={showTerms}>Terms of Use</button>
+                    <button id="termUseBtn" type="button" className="btn btn-success" style={{marginTop:"10px",backgroundColor:'#15983e',color:"white",width:"40vw"}} onClick={showTerms}>Terms of Use</button>
                 </div>
             </div>
         </div>
@@ -108,7 +109,7 @@ function Dashboard(){
                                     {/* <img alt="" src="images/path.png" width="1024px;" height="450px;" class="img-responsive">
                                     </img> */}
                                     <h2><span>
-                                        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#showmoreModal">Show More</a>
+                                        <a href="/quiz" className="btn btn-success" style={{marginTop:"10px",backgroundColor:'#15983e',color:"white",width:"30vw"}} data-toggle="modal" data-target="#showmoreModal">Switch to Exercise</a>
                                     </span></h2>
                                     
                                 </div>
@@ -214,7 +215,9 @@ function Dashboard(){
                                 some additional/different kind of support system.
                             </div>
                         </div>
-                    </div>
+
+                    </div><a href="/quiz" className="btn btn-success" style={{marginTop:"10px",backgroundColor:'#15983e',color:"white",width:"30vw"}} data-toggle="modal" data-target="#showmoreModal">Switch
+					to Exercise</a>
                 </div>
                 <div className="card-body"  style={{display:"none",textAlign:"left"}} id="tips">
                     <div id="2">
@@ -300,6 +303,8 @@ function Dashboard(){
 								<br></br>
 							</ul>
                     </div>
+					<a href="/quiz" className="btn btn-success" style={{marginTop:"10px",backgroundColor:'#15983e',color:"white",width:"30vw"}} data-toggle="modal" data-target="#showmoreModal">Switch
+						to Exercise</a>
                 </div>
                 <div className="card-body" id="termUse" style={{display:"none",textAlign:"left"}}>
                     <div id="3">
@@ -719,7 +724,7 @@ function Dashboard(){
 							<hr></hr>
 							<p>
 								I agree to the terms
-								<button id="agree" type="button" class="btn btn-success" onclick="agreeButton()" disabled="">Agree &amp; Continue</button>
+								<Link to="/quiz"><button id="agree" type="button" class="btn btn-success" onclick="agreeButton()" disabled="">Agree &amp; Continue to Exercise</button></Link>
 							</p>
 							<p>Contact Us : push.d.nimhans@gmail.com</p>
                     </div>

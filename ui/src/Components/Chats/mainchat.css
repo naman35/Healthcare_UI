@@ -30,12 +30,12 @@
 
 .ce-text-input {
     border-radius: 6px !important;
-    border: 1px solid #f0edf5 !important;
+    border: 1px solid #94cc73 !important;
 }
 
 .ce-primary-button {
     border-radius: 6px !important;
-    background-color: #7554a0 !important;
+    background-color: #408635 !important;
     position: relative;
     bottom: 1px;
 }
@@ -56,7 +56,7 @@
 
 .ce-autocomplete-options {
     border-radius: 6px !important;
-    border: 1px solid #3b2a50 !important;
+    border: 1px solid #679d48 !important;
     background-color: white !important;
 }
 
@@ -82,8 +82,8 @@
     width: calc(100%);
     padding: 18px;
     text-align: center;
-    background-color: #030303;
-    opacity:0.7;
+    background-color: #408635;
+    opacity:0.8;
 }
 
 .chat-title {
@@ -93,7 +93,7 @@
 }
 
 .chat-subtitle {
-    color: #504d56;
+    color: #55bb49;
     font-weight: 600;
     font-size: 12px;
     padding-top: 4px;
@@ -175,7 +175,7 @@
 .message-form {
     overflow: hidden;
     border-radius: 6px;
-    border: 1px solid #3b2a50;
+    border: 1px solid #30862e;
     background-color: white;
 }
 

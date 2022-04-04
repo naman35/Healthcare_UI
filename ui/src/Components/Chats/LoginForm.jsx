@@ -4,8 +4,8 @@ import axios from 'axios';
 const projectID = '937271bb-fb23-49d9-bf17-0b8c5ca11629';
 
 const Modal = () => {
-  const [username, setUsername] = useState('Sanphire');
-  const [password, setPassword] = useState('Sanphire@015');
+  const [username, setUsername] = useState('Fortis');
+  const [password, setPassword] = useState('Fortis');
   const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {

@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom'
 function PatientTrack(){
     let sec = "12345";
     let nums = [];
@@ -106,7 +107,7 @@ function PatientTrack(){
                             <input type="text" className="form-control" id="contactNo" disabled={true}></input>
                         </div>
                         <div style={{marginTop:"4px",textAlign:"center"}}>
-                            <button type="button" id="editBtn" className="btn" style={{marginTop:"10px",backgroundColor:"gainsboro",color:"black"}}>Analytics</button>
+                            <Link to="/analytics"><button type="button" id="editBtn" className="btn" style={{marginTop:"10px",backgroundColor:'#1bbd7e',color:"black"}}>Analytics</button></Link>
                         </div>
                     </form>
                 </div>
@@ -135,7 +136,7 @@ function PatientTrack(){
                                 Learn Self Compassion
                         </li>
                     </ul>
-                    <button type="button" onClick={updateSection} className="btn btn-primary" style={{marginTop:"2vw"}}>Update</button>
+                    <button type="button" onClick={updateSection} className="btn btn-primary" style={{backgroundColor:'#1bbd7e',marginTop:"2vw"}}>Update</button>
                 </div>
                 <div className="card-body" id="chat" style={{display:"none"}}>
                     <h5 className="card-title">Chat</h5>

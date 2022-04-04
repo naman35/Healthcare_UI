@@ -1,5 +1,6 @@
 import {React,useState} from 'react'
-import { Grid,Paper, Avatar, TextField, Button, Typography,Link } from '@material-ui/core'
+import { Grid,Paper, Avatar, TextField, Button, Typography } from '@material-ui/core'
+import { Link } from 'react-router-dom';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -53,9 +54,9 @@ const Login=()=>{
                     }
                     label="Remember me"
                 />
-                <Button type='submit'  variant="contained" style={avatarStyle} fullWidth><b>Login</b></Button>
-                <Button type='submit'  variant="contained" style={btnstyle} size="small">Forget Password</Button><br></br>
-                <Button type='submit'  variant="contained" style={btnstyle} size="small">SignUp</Button>
+                <Link to="/dashboard"><Button type='submit'  variant="contained" style={avatarStyle} fullWidth><b>Login</b></Button></Link>
+                <Link to="/forgetpassword"><Button type='submit'  variant="contained" style={btnstyle} size="small">Forget Password</Button><br></br></Link>
+                <Link to="/signup"><Button type='submit'  variant="contained" style={btnstyle} size="small">SignUp</Button></Link>
                 {/*<Typography >*/}
                 {/*    <Link href="#" >*/}
                 {/*        Forgot password ?*/}
