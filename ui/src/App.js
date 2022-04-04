@@ -9,6 +9,7 @@ import PatientTrack from "./Components/patientTrack";
 import Analytics from "./Components/analytics";
 import Quiz from "./Components/quiz/quiz";
 import Mainchat from "./Components/Chats/mainchat";
+import PreRegister from "./Components/pre_register_quiz";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route path='/analytics' element={<Analytics/>} />
             <Route path='/quiz' element={<Quiz/>} />
             <Route path='/mainchat' element={<Mainchat/>} />
+            <Route path='/preRegister' element={<PreRegister/>} />
             <Route path='*' element={<p>"ERROR"</p>} />
 
 
