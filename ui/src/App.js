@@ -25,8 +25,8 @@ function App() {
             <Route path='/analytics' element={<Analytics/>} />
             <Route path='/quiz' element={<Quiz/>} />
             <Route path='/mainchat' element={<Mainchat/>} />
+            <Route path='*' element={<p>"ERROR"</p>} />
 
-            <Route path='*' element={<p>ERROR</p>} />
 
         </Routes>
         </BrowserRouter>
