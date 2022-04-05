@@ -3,15 +3,18 @@ import Bar from "./bar";
 import { Grid,Paper, Avatar, TextField, Button, Typography,Link } from '@material-ui/core'
 const Session =()=>{
 
-const paperStyle={padding :20,height:'124vh',width:400, margin:"20px auto"}
+const paperStyle={padding :20,height:'110vh',width:400, margin:"20px auto"}
      return(
        <> 
-               <Paper elevation={10} style={paperStyle}>
-            <Grid style={{margin:"20px auto"}}>
-      <div><Bar/></div>
+               <Paper  elevation={2} style={paperStyle}>
+            <Grid >
+                <h4><i>Welcome To Exercise Section</i></h4>
+      <div><Bar /></div>
       <br/>
       <br/>
-      <div style={{backgroundColor:'#87ceeb'}}><p>Lorem ipsum is a dummy text without any sense. It is a sequence of Latin words that, as they are positioned, do not form sentences with a complete sense, but give life to a test text useful to fill spaces that will subsequently be occupied from ad hoc texts composed by communication professionals.</p></div>
+      <div style={{backgroundColor:'#d9dfe1'}}><p>Welcome to the Exercise Part.Here,We will going to have lots of fun and will trying to know each other.Just Click on Quiz Button </p></div>
+                <a href="/quiz" className="btn btn-success" style={{marginTop:"10px",backgroundColor:'#15983e',color:"white",width:"30vw"}} data-toggle="modal" data-target="#showmoreModal">Switch
+                    to Quiz</a>
       <br/>
       <br/>
       <div>

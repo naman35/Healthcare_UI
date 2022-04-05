@@ -8,19 +8,22 @@ import {
 } from '@devexpress/dx-react-chart-material-ui';
 const Bar =()=>{
     const data = [
-        { argument: 'Mon', value: 30 },
-        { argument: 'Tue', value: 20 },
-        { argument: 'Wed', value: 10 },
-        { argument: 'Thur', value: 50 },
-        { argument: 'Fri', value: 40 },
-        { argument: 'Sat', value: 30 },
-        { argument: 'Sun', value: 50 },
+        { argument: 'Week-1', value: 30 },
+        { argument: 'Week-2', value: 20 },
+        { argument: 'Week-3', value: 10 },
+        { argument: 'Week-4', value: 50 },
+        { argument: 'Week-5', value: 40 },
+        { argument: 'Week-6', value: 30 },
+
 
       ];
-      return (
-          <Paper>
+    const paperStyle={padding :20,height:'28vh',width:350, margin:"20px auto"}
+
+    return (
+          <Paper >
+
           <Chart
-            data={data}
+                  data={data}
           >
             <ArgumentAxis />
             <ValueAxis />
