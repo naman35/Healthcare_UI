@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 function Info(){
     let obj = {
         first: "",
@@ -93,6 +95,9 @@ function Info(){
                         <button type="button" id="saveBtn" onClick={saveInfo} className="btn" style={{marginTop:"10px",backgroundColor:"#A2F7BF",color:"black",display:"none"}}>Save</button>
                     </div>
                     </form>
+                <div style={{marginTop:"4px",textAlign:"center"}}>
+                    <Link to="/analytics"><button type="button" id="editBtn" className="btn" style={{marginTop:"10px",backgroundColor:'#1bbd7e',color:"black"}}>Analytics</button></Link>
+                </div>
             </div>
         </div>
     </div>

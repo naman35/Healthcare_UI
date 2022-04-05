@@ -1,5 +1,6 @@
 import {React,useState,useEffect,useRef} from 'react'
-import { Grid,Paper, Avatar, TextField, Button, Typography,Link } from '@material-ui/core'
+import { Grid,Paper, Avatar, TextField, Button, Typography} from '@material-ui/core'
+import {Link} from 'react-router-dom'
 import {EmojiPeople} from "@material-ui/icons";
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -151,7 +152,7 @@ const Signup=()=>{
                 <br></br>
                 <br></br>
 
-                <Button  type='submit' onClick={handleSubmit} variant="contained" style={avatarStyle} fullWidth>Next Step:-></Button>
+                <Link to="/preRegister" >   <Button  type='submit' onClick={handleSubmit} variant="contained" style={avatarStyle} fullWidth>Next Step:-></Button></Link>
 
                 {/*<Typography >*/}
                 {/*    <Link href="#" >*/}

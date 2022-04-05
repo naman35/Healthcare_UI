@@ -193,6 +193,9 @@ function PatientTrack(){
                 </div>
                 <div className="card-body" id="chat" style={{display:"none"}}>
                     <h5 className="card-title">Chat</h5>
+                    <div style={{marginTop:"4px",textAlign:"center"}}>
+                        <Link to="/mainchat"><button type="button" id="editBtn" className="btn" style={{marginTop:"10px",backgroundColor:'#1bbd7e',color:"black"}}>Click to Chat</button></Link>
+                    </div>
                 </div>
             </div>
         </div>

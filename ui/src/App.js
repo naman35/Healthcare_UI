@@ -30,7 +30,7 @@ function App() {
             <Route path='/mainchat' element={<Mainchat/>} />
             <Route path='/preRegister' element={<PreRegister/>} />
             <Route path='/forgotPassword' element={<ForgotPassword/>} />
-            <Route path='*' element={<p>"ERROR"</p>} />
+            <Route path='*' element={<p>"Hi Srikanth Sir...We are here at MILESTONE 3"</p>} />
             <Route path='/session' element={<Session />} />
             <Route path='/bar' element={<Bar/>} />
 
