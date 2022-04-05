@@ -48,6 +48,9 @@ function Dashboard(){
             <span class="navbar-text">
             Push-D Logo
             </span>
+			<span>
+                <a id-type="button" href="/editProfile" className="btn btn-success" style={{marginTop:"10px",backgroundColor:"white",color:"black"}}>Edit</a>
+            </span>
             <span>
                 <button id-type="button" className="btn btn-success" style={{marginTop:"10px",backgroundColor:"white",color:"black"}}>Logout</button>
             </span>

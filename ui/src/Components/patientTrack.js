@@ -2,10 +2,18 @@ import {Link} from 'react-router-dom'
 function PatientTrack(){
     let pth = window.location.href;
     let x = pth.indexOf("=");
-    let str = pth[40] + pth[41];
-    // let pid = parseInt(str);
-    let pid = 28;
-    console.log(pid);
+    let y = pth.length;
+    let k = x+1;
+    let str = "";
+    while(k<y)
+    {
+        str = str + pth[k];
+        k++;
+    }
+    console.log(str);
+    let pid = parseInt(str);
+    // let pid = 28;
+    // console.log(id);
     let sec = "034";
     let nums = [];
     let chk = [false,false,false,false,false];
