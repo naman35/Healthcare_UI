@@ -3,7 +3,8 @@ function PatientTrack(){
     let pth = window.location.href;
     let x = pth.indexOf("=");
     let str = pth[40] + pth[41];
-    let pid = parseInt(str);
+    // let pid = parseInt(str);
+    let pid = 28;
     console.log(pid);
     let sec = "034";
     let nums = [];
@@ -27,17 +28,17 @@ function PatientTrack(){
     //     3:"Manage Excessive Worries",
     //     4:"Learn Self Compassion"
     // }
-    fetch("http://0f76-119-161-98-68.ngrok.io/getAllDetails/"+pid,{
+    fetch("http://9bdc-119-161-98-68.ngrok.io/getDetails/"+pid,{
         method:"GET",
     })
         .then((response) => response.json())
         .then((responseData)=>{
               console.log(responseData);
-            document.getElementById("FirstName").value = responseData[0].username;
-            document.getElementById("LastName").value = responseData[0].username;
-            document.getElementById("Address").value = responseData[0].id;
-            document.getElementById("ContactNo").value = responseData[0].role;
-            document.getElementById("age").value = responseData[0].id;
+            document.getElementById("FirstName").value = responseData.username;
+            document.getElementById("LastName").value = responseData.username;
+            document.getElementById("Address").value = responseData.id;
+            document.getElementById("ContactNo").value = responseData.role;
+            document.getElementById("age").value = responseData.id;
         })
 
     // let lst = ["Understanding depression","Enhancing Self Care Motivation","Activate: Baby Steps to Move ahead","Manage Excessive Worries","Learn Self Compassion"];

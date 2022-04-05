@@ -43,9 +43,9 @@ function Dashboard(){
     return <>
     <div>
         <div>
-        <nav class="navbar" style={{backgroundColor:"gainsboro"}}>
-        <div class="container-fluid">
-            <span class="navbar-text">
+        <nav className="navbar" style={{backgroundColor:"gainsboro"}}>
+        <div className="container-fluid">
+            <span className="navbar-text">
             Push-D Logo
             </span>
             <span>
@@ -55,7 +55,7 @@ function Dashboard(){
         </nav>
         </div>
         <div className="container" style={{textAlign:"center",marginTop:"10px",height:"20vw"}}>
-            <iframe class="responsive-iframe" src="https://www.youtube.com/embed/tgbNymZ7vqY" height={"100%"} width={"50%"}></iframe>
+            <iframe className="responsive-iframe" src="https://www.youtube.com/embed/tgbNymZ7vqY" height={"100%"} width={"50%"}></iframe>
         </div>
         <div style={{marginTop:"10px"}}>
             <div className="row" style={{textAlign:"center"}}>
@@ -81,7 +81,7 @@ function Dashboard(){
                             <p><strong>OVERVIEW</strong></p>
                                 <p>The entire program is divided into two broad areas:
                                     Essential and optional.</p>
-                                <p class="pclass">
+                                <p className="pclass">
                                     <strong>ESSENTIAL ZONE:</strong>
                                 </p>
                                 <p>
@@ -96,7 +96,7 @@ function Dashboard(){
                                     about these sections. Your journey through this zone is depicted
                                     in the diagram given below.
                                 </p>
-                                <p class="pclass">
+                                <p className="pclass">
                                     <strong>OPTIONAL ZONE:</strong>
                                 </p>
                                 <p>
@@ -105,7 +105,7 @@ function Dashboard(){
                                     over. You can decide to go through an optional zone section
                                     depending on your need or preference.
                                 </p>
-                                <div class="image">
+                                <div className="image">
                                     {/* <img alt="" src="images/path.png" width="1024px;" height="450px;" class="img-responsive">
                                     </img> */}
                                     <h2><span>
@@ -724,7 +724,7 @@ function Dashboard(){
 							<hr></hr>
 							<p>
 								I agree to the terms
-								<Link to="/quiz"><button id="agree" type="button" class="btn btn-success" onclick="agreeButton()" disabled="">Agree &amp; Continue to Exercise</button></Link>
+								<Link to="/quiz"><button id="agree" type="button" className="btn btn-success" onclick="agreeButton()" disabled="">Agree &amp; Continue to Exercise</button></Link>
 							</p>
 							<p>Contact Us : push.d.nimhans@gmail.com</p>
                     </div>

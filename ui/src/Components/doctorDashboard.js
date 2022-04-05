@@ -4,7 +4,7 @@ function DoctorDashboard(){
     // function Redirect(val){
     //     alert(val);
     // }
-    fetch("http://0f76-119-161-98-68.ngrok.io/patientDetails/1",{
+    fetch("http://1b84-119-161-98-68.ngrok.io/patientDetails/1",{
         method:"GET",
     })
         .then((response) => response.json())

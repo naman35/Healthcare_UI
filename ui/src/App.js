@@ -12,7 +12,7 @@ import Mainchat from "./Components/Chats/mainchat";
 import PreRegister from "./Components/pre_register_quiz";
 import Session from "./Components/session";
 import Bar from "./Components/bar"
-
+import ForgotPassword from "./Components/forgotPassword";
 
 function App() {
   return (
@@ -29,6 +29,7 @@ function App() {
             <Route path='/quiz' element={<Quiz/>} />
             <Route path='/mainchat' element={<Mainchat/>} />
             <Route path='/preRegister' element={<PreRegister/>} />
+            <Route path='/forgotPassword' element={<ForgotPassword/>} />
             <Route path='*' element={<p>"ERROR"</p>} />
             <Route path='/session' element={<Session />} />
             <Route path='/bar' element={<Bar/>} />
