@@ -33,7 +33,8 @@ const Login=()=>{
 
             window.location.href="/dashboard";
         }
-        if ((username == hardcodedCred1.username) && (password == hardcodedCred1.password)) {
+
+        else if ((username == hardcodedCred1.username) && (password == hardcodedCred1.password)) {
             //combination is good. Log them in.
             //this token can be anything. You can use random.org to generate a random string;
 
