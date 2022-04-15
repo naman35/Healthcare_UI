@@ -7,7 +7,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import axios from './axios';
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-const REGISTER_URL = 'http://a6b5-103-156-19-229.ngrok.io/signup';
+const REGISTER_URL = 'http://localhost:8083/signup';
 const Signup=()=>{
     const userRef = useRef();
     const errRef = useRef();

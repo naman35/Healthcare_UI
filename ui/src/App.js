@@ -1,4 +1,5 @@
 import { Routes ,Route,BrowserRouter } from 'react-router-dom';
+
 import './App.css';
 import Login from "./Components/login";
 import Signup from "./Components/signup";
@@ -13,6 +14,8 @@ import PreRegister from "./Components/pre_register_quiz";
 import Session from "./Components/session";
 import Bar from "./Components/bar"
 import ForgotPassword from "./Components/forgotPassword";
+import Landingpage from "./Components/LandingPage/landingpage"
+import Welcome1 from "./Components/Welcome";
 
 function App() {
   return (
@@ -30,14 +33,14 @@ function App() {
             <Route path='/mainchat' element={<Mainchat/>} />
             <Route path='/preRegister' element={<PreRegister/>} />
             <Route path='/forgotPassword' element={<ForgotPassword/>} />
-            <Route path='*' element={<p>"Hi Srikanth Sir...We are here at MILESTONE 3"</p>} />
+            <Route path='*' element={<Welcome1 />} />
             <Route path='/session' element={<Session />} />
             <Route path='/bar' element={<Bar/>} />
+            <Route path='/landingpage' element={<Landingpage />} />
 
 
         </Routes>
         </BrowserRouter>
-       
 
 
     </div>

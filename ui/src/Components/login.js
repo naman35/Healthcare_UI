@@ -49,15 +49,19 @@ const Login=()=>{
         e.preventDefault();
 
         const authObject = { 'username': username, 'password': password ,'role':'ROLE_PATIENT'};
+        console.log("hi")
 
 
 
         try {
-            let response=await axios.get('http://e9ad-119-161-98-68.ngrok.io/signin', { headers: authObject });
+
+            console.log(authObject);
+            let response=await axios.post('http://localhost:8083/signin', { authObject });
 
             localStorage.setItem('username', username);
             localStorage.setItem('password', password);
             console.log(response)
+
 
             window.location.reload();
             setError('');
@@ -89,7 +93,7 @@ const Login=()=>{
                     }
                     label="Remember me"
                 />
-                <Button type='submit' onClick={sub} variant="contained" style={avatarStyle} fullWidth><b>Login</b></Button>
+                <Button type='submit' onClick={handleSubmit} variant="contained" style={avatarStyle} fullWidth><b>Login</b></Button>
                 <Link to="/forgotPassword" > <Button type='submit'  variant="contained" style={btnstyle} size="small">Forget Password</Button><br></br></Link>
                 <Link to="/signup" >  <Button type='submit'  variant="contained" style={btnstyle} size="small">SignUp</Button></Link>
                 {/*<Typography >*/}
