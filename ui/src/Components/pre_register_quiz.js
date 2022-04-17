@@ -1,3 +1,4 @@
+import {Navbar,Container,Nav} from "react-bootstrap"
 function PreRegister(){
 
     // fetch("http://a6b5-103-156-19-229.ngrok.io/getDetails",{

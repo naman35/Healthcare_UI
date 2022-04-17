@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom'
+import {Navbar,Container,Nav} from "react-bootstrap"
 function PatientTrack(){
     let pth = window.location.href;
     let x = pth.indexOf("=");

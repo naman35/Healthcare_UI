@@ -2,6 +2,7 @@ import {React,useState,useEffect,useRef} from 'react'
 import { Grid,Paper, Avatar, TextField, Button, Typography} from '@material-ui/core'
 import {Link} from 'react-router-dom'
 import {EmojiPeople} from "@material-ui/icons";
+import {Navbar,Container,Nav} from "react-bootstrap";
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import axios from './axios';
@@ -87,10 +88,35 @@ const Signup=()=>{
         }
     }
 
-    const paperStyle={padding :20,height:'70vh',width:280, margin:"20px auto"}
+    const paperStyle={padding :20,height:'88vh',width:280, margin:"20px auto",opacity:0.8}
     const avatarStyle={backgroundColor:'#1bbd7e'}
     const btnstyle={margin:'8px 0'}
-    return(
+    return(<div style={{backgroundImage:"url('https://images.unsplash.com/photo-1613492636024-9430710a84d4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8b24lMjB0b3AlMjBvZiUyMHRoZSUyMHdvcmxkfGVufDB8fDB8fA%3D%3D&w=1000&q=80')" ,backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat'}}>
+            <Navbar bg="light" variant="light" style={{opacity:0.8}} >
+        <Container >
+            <Navbar.Brand href="landingpage">
+                Push-D
+            </Navbar.Brand>
+            <Nav className="me-auto" >
+
+                <Button href="login" variant="outline-success" style={{border:0}} >Login</Button>
+                <Button href="signup" variant="outline-success" style={{border:0}}>Signup</Button>
+                <Button href="About" variant="outline-success" style={{border:0}}>About</Button>
+                <Button href="login" variant="outline-success" style={{border:0}}>ContactUs</Button>
+                <div className="btn-group">
+                    <button type="button" className="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Translate
+                    </button>
+                    <ul className="dropdown-menu">
+                        <li><a className="dropdown-item" href="#" >English</a></li>
+                        <li><a className="dropdown-item" href="#" >French</a></li>
+                        <li><a className="dropdown-item" href="#" >Hindi</a></li>
+                    </ul>
+                </div>
+            </Nav>
+        </Container>
+    </Navbar>
         <Grid>
             <Paper elevation={10} style={paperStyle}>
                 <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
@@ -165,7 +191,7 @@ const Signup=()=>{
                 {/*    </Link>*/}
                 {/*</Typography>*/}
             </Paper>
-        </Grid>
+        </Grid></div>
     )
 }
 

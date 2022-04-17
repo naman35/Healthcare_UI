@@ -16,7 +16,7 @@ import Bar from "./Components/bar"
 import ForgotPassword from "./Components/forgotPassword";
 import Landingpage from "./Components/LandingPage/landingpage"
 import Welcome1 from "./Components/Welcome";
-
+import {Navbar,Container,Nav} from "react-bootstrap";
 function App() {
   return (
     <div className="App">

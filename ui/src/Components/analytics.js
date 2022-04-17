@@ -1,6 +1,7 @@
 import React from 'react'
 import { Line,Pie,Doughnut} from 'react-chartjs-2'
 import { Grid,Paper, Avatar, TextField, Button, Typography,Link } from '@material-ui/core'
+import {Navbar,Container,Nav} from "react-bootstrap"
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -50,7 +51,7 @@ const dataLine = {
         },
     ],
 };
-const paperStyle={padding :20,height:'95vh',width:400, margin:"20px auto"}
+const paperStyle={padding :20,height:'90vh',width:400, margin:"20px auto"}
 const data = {
     labels: ['Completed','Remaining'],
     datasets: [
@@ -78,8 +79,33 @@ const data = {
     ],
 };
 const Analytics = () => {
-    return (
-        <div>
+    return (<div style={{backgroundImage:"url('https://images.unsplash.com/photo-1520962880247-cfaf541c8724?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVhY2V8ZW58MHx8MHx8&w=1000&q=80')" ,backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat'}}>
+        <Navbar bg="light" variant="light" style={{opacity:0.8}} >
+            <Container >
+                <Navbar.Brand href="landingpage">
+                    Push-D
+                </Navbar.Brand>
+                <Nav className="me-auto" >
+
+                    <Button href="login" variant="outline-success" style={{border:0}} >Login</Button>
+                    <Button href="signup" variant="outline-success" style={{border:0}}>Signup</Button>
+                    <Button href="About" variant="outline-success" style={{border:0}}>About</Button>
+                    <Button href="login" variant="outline-success" style={{border:0}}>ContactUs</Button>
+                    <div className="btn-group">
+                        <button type="button" className="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Translate
+                        </button>
+                        <ul className="dropdown-menu">
+                            <li><a className="dropdown-item" href="#" >English</a></li>
+                            <li><a className="dropdown-item" href="#" >French</a></li>
+                            <li><a className="dropdown-item" href="#" >Hindi</a></li>
+                        </ul>
+                    </div>
+                </Nav>
+            </Container>
+        </Navbar>
+        <div style={{opacity:0.8}}>
         <Paper elevation={10} style={paperStyle}>
             <Grid align='center'>
             <h2>Analytics</h2>
@@ -90,7 +116,7 @@ const Analytics = () => {
             </Grid>
         </Paper>
 
-        </div>
+        </div></div>
     )
 }
 
