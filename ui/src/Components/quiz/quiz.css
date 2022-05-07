@@ -11,7 +11,7 @@
 
 
 .body1 {
-    background-color: #e9eae9;
+    background-color: #d0b8b8;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,7 +19,7 @@
 }
 
 .app1 {
-    background-color: #37c28c;
+    background-color: #36594b;
     width: 450px;
     min-height: 200px;
     height: min-content;
@@ -38,8 +38,8 @@
 
 /* QUESTION/TIMER/LEFT SECTION */
 .question-section {
-    width: 100%;
-    position: relative;
+    width: 200px;
+    position: center;
 }
 
 .question-count {

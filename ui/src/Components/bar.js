@@ -17,7 +17,7 @@ const Bar =()=>{
 
 
       ];
-    const paperStyle={padding :20,height:'28vh',width:350, margin:"20px auto"}
+    const paperStyle={padding :20,height:'27vh',width:350, margin:"20px auto"}
 
     return (
           <Paper >

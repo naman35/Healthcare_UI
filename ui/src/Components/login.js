@@ -49,26 +49,25 @@ const Login=()=>{
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const authObject = { 'username': username, 'password': password ,'role':'ROLE_PATIENT'};
-        console.log("hi")
-
-        try {
-            console.log(username);
-            console.log(password);
-            axios.post("http://localhost:8084/login",{
-                username:username,
-                password:password,
-                role:"ROLE_PATIENT"
-            })
-            .then(function(response){
-                let pid = response.data.id;
+        axios.post('https://jsonplaceholder.typicode.com/users', {
+            username: username,
+            password: password,
+            role: "ROLE_PATIENT"
+        })
+            .then(function (response) {
                 console.log(response.data);
-                window.location.href="/dashboard?id="+pid;
+                let res =  response.data;
+                if(res.role === "ROLE_PATIENT")
+                {
+                    window.location.href = '/dashboard?id=' + res.id ;
+                }
+                else {
+                    window.location.href = '/doctorDashboard?id=' + res.id;
+                }
             })
-        } catch (err) {
-            setError('Oops, incorrect credentials.');
-            console.log("lop")
-        }
+            .catch(function (error) {
+                console.log(error);
+            });
     };
 
     const paperStyle={padding :20,height:'88vh',width:400, margin:"20px auto"}

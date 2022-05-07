@@ -56,35 +56,9 @@ function Dashboard(){
         document.getElementById("tipsBtn").style.backgroundColor="#218622";
     }
     return <>
-    <div style={{backgroundImage:"url('https://images.unsplash.com/photo-1520962880247-cfaf541c8724?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVhY2V8ZW58MHx8MHx8&w=1000&q=80')" ,backgroundSize: 'cover',
-		backgroundRepeat: 'no-repeat'}}>
-        <div>
-			<div >
-				<Navbar bg="light" variant="light" style={{opacity:0.8}} >
-					<Container >
-						<Navbar.Brand href="landingpage">
-							Push-D
-						</Navbar.Brand>
-						<Nav className="me-auto" >
 
-							<Button href="login" variant="outline-success" style={{border:0}} >Login</Button>
-							<Button href="signup" variant="outline-success" style={{border:0}}>Signup</Button>
-							<Button href="About" variant="outline-success" style={{border:0}}>About</Button>
-							<Button href="login" variant="outline-success" style={{border:0}}>ContactUs</Button>
-							<div className="btn-group">
-								<button type="button" className="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-									Translate
-								</button>
-								<ul className="dropdown-menu">
-									<li><a className="dropdown-item" href="#" >English</a></li>
-									<li><a className="dropdown-item" href="#" >French</a></li>
-									<li><a className="dropdown-item" href="#" >Hindi</a></li>
-								</ul>
-							</div>
-						</Nav>
-					</Container>
-				</Navbar>
-        </div>
+
+
         <div className="container" style={{textAlign:"center",marginTop:"10px",height:"20vw"}}>
             <iframe class="responsive-iframe" src="https://www.youtube.com/embed/tgbNymZ7vqY" height={"100%"} width={"50%"}></iframe>
         </div>
@@ -142,7 +116,7 @@ function Dashboard(){
                                     <h2><span>
                                         <a href="/session" className="btn btn-success" style={{marginTop:"10px",backgroundColor:'#15983e',color:"white",width:"30vw"}} data-toggle="modal" data-target="#showmoreModal">Switch to Exercise</a>
                                     </span></h2>
-                                    
+
                                 </div>
                     </div>
                 </div>
@@ -252,7 +226,7 @@ function Dashboard(){
                 </div>
                 <div className="card-body"  style={{display:"none",textAlign:"left"}} id="tips">
                     <div id="2">
-							
+
 							<p><strong>TIPS FOR COMPLETION</strong></p>
 							<p>
 								<strong>OUR STRONG RECOMMENDATIONS AND TIPS FOR YOU
@@ -761,8 +735,7 @@ function Dashboard(){
                     </div>
                 </div>
         </div>
-		</div></div>
-    
+
     </>
 }
 

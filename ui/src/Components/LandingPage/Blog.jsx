@@ -4,20 +4,39 @@ import styled from "styled-components";
 import BlogBox from "./BlogBox";
 import FullButton from "./FullButton";
 import TestimonialSlider from "./TestimonialSlider";
-
+import i18n from "i18next";
+import {initReactI18next, useTranslation} from "react-i18next";
+import {Translations_En} from "../translateEn";
+import {Translations_Fr} from "../translateFr";
+import {Translations_Hn} from "../translateHn";
+i18n
+    .use(initReactI18next)
+    .init({
+      resources:{
+        en:{translation:Translations_En},
+        fr:{translation:Translations_Fr},
+        hn:{translation:Translations_Hn}
+      },
+      lng:"en",
+      fallbackLng:"en",
+      interpolation:{escapeValue:false}
+    });
 export default function Blog() {
+  const { t } = useTranslation();
+  function updLang(val){
+    i18n.changeLanguage(val);
+  }
+
   return (
     <Wrapper id="blog">
       <div className="whiteBg">
         <div className="container">
           <HeaderInfo>
-            <h1 className="font40 extraBold">Hey Buddy!!</h1>
+            <h1 className="font40 extraBold">{t("heybuddy")}</h1>
             <p className="font13">
-              <b>What is PUSH-D?</b>
+              <b>{t("WhatisPUSHD")}</b>
               <br />
-              PUSH-D (Practice and Use Self-Help for Depression) is a computer-based self-care program which is meant to empower individuals by offering a space to learn, strengthen and practice psychological skills that can be useful in dealing with depressive symptoms.
-
-              This program is NOT meant for diagnosis of depression and is not a substitute for professional services provided by a mental health professional.
+              {t("para")}
 
 
             </p>
@@ -25,9 +44,8 @@ export default function Blog() {
           <div className="row textCenter">
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <BlogBox
-                title="For Whom?"
-                text='This self-care program is designed for individuals who have mild levels (low severity) of depressive symptoms.This is a self-care program for people who have mild levels of depressive symptoms and want to try it as a first-line management.This program is NOT meant for diagnosis.                                                  '
-
+                title={t("forwhom")}
+                text={t("forwhompara")}
 
 
               tag=""
@@ -37,8 +55,8 @@ export default function Blog() {
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <BlogBox
-                title="What To Expect?"
-                text=" If you are experiencing any kind of crisis at the time of registration or while using this program, the PUSH-D team will strongly recommend that you seek immediate and direct consultation with a trained mental health professional/connect to a helpline/other appropriate emergency service"
+                title={t("whattoexpect")}
+                text={t("whattoexpectpara")}
                 tag=""
                 author=""
                 action={() => alert("clicked")}
