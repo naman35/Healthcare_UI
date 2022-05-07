@@ -52,20 +52,19 @@ const Login=()=>{
         const authObject = { 'username': username, 'password': password ,'role':'ROLE_PATIENT'};
         console.log("hi")
 
-
-
         try {
-
-            console.log(authObject);
-            let response=await axios.post('http://localhost:8083/signin', { authObject });
-
-            localStorage.setItem('username', username);
-            localStorage.setItem('password', password);
-            console.log(response)
-
-
-            window.location.reload();
-            setError('');
+            console.log(username);
+            console.log(password);
+            axios.post("http://localhost:8084/login",{
+                username:username,
+                password:password,
+                role:"ROLE_PATIENT"
+            })
+            .then(function(response){
+                let pid = response.data.id;
+                console.log(response.data);
+                window.location.href="/dashboard?id="+pid;
+            })
         } catch (err) {
             setError('Oops, incorrect credentials.');
             console.log("lop")

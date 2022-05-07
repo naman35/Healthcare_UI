@@ -3,6 +3,18 @@ import {Button} from "@material-ui/core";
 import React from "react";
 import {Navbar,Container,Nav} from "react-bootstrap"
 function Dashboard(){
+	let pth = window.location.href;
+	let x = pth.indexOf("=");
+	let y = pth.length;
+	let k = x+1;
+	let str = "";
+	while(k<y)
+	{
+		str = str + pth[k];
+		k++;
+	}
+	console.log(str);
+	let pid = parseInt(str);
     function showOverview(){
         document.getElementById("overview").style.display="block";
         document.getElementById("signBoard").style.display="none";

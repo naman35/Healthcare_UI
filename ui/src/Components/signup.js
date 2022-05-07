@@ -6,6 +6,7 @@ import {Navbar,Container,Nav} from "react-bootstrap";
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import axios from './axios';
+import {Axios} from "axios";
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const REGISTER_URL = 'http://localhost:8083/signup';
@@ -59,23 +60,46 @@ const Signup=()=>{
         }
         try {
             const obj = {username: user, password: pwd,email: email, role: "ROLE_PATIENT"}
-            const response = await axios.post(REGISTER_URL,
-                obj,
-                {
-                    headers: { 'Content-Type': 'application/json' },
-                    withCredentials: true
-                }
-            );
-            console.log(response?.data);
-            console.log(response?.accessToken);
-            console.log(JSON.stringify(response))
-            setSuccess(true);
-            //clear state and controlled inputs
-            //need value attrib on inputs for this
-            setUser('');
-            setEmail('');
-            setPwd('');
-            setMatchPwd('');
+            axios.post('http://localhost:8084/signup', {
+                username: user,
+                email:email,
+                password: pwd,
+                role: "ROLE_PATIENT"
+            })
+                .then(function (response) {
+                    console.log(response.data);
+
+                    axios.post("http://localhost:8084/addPatientDetails",{
+                        username:user,
+                        firstname:user,
+                        lastname:user,
+                        skippable:""
+                    })
+                        .then(function(response){
+                            console.log(response.data);
+                    })
+                    // let res =  response.data;
+                    // if(res.role === "ROLE_PATIENT")
+                    // {
+                    //     window.location.href = '/dashboard?id=' + res.id ;
+                    // }
+                    // else {
+                    //     window.location.href = '/doctorDashboard?id=' + res.id;
+                    // }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+            // console.log(response?.data);
+            // console.log(response?.accessToken);
+            // console.log(JSON.stringify(response))
+            // setSuccess(true);
+            // //clear state and controlled inputs
+            // //need value attrib on inputs for this
+            // setUser('');
+            // setEmail('');
+            // setPwd('');
+            // setMatchPwd('');
         } catch (err) {
             if (!err?.response) {
                 setErrMsg('No Server Response');

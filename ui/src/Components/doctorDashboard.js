@@ -26,7 +26,7 @@ function DoctorDashboard(){
     function updLang(val){
         i18n.changeLanguage(val);
     }
-    fetch("http://localhost:8083/patientDetails/1",{
+    fetch("http://localhost:8084/patientDetailsDoc/1",{
         method:"GET",
     })
         .then((response) => response.json())

@@ -37,7 +37,7 @@ function PatientTrack(){
     //     3:"Manage Excessive Worries",
     //     4:"Learn Self Compassion"
     // }
-    fetch("http://9bdc-119-161-98-68.ngrok.io/getDetails/"+pid,{
+    fetch("http://localhost:8084/patientDetails/"+pid,{
         method:"GET",
     })
         .then((response) => response.json())
@@ -165,8 +165,15 @@ function PatientTrack(){
                             <label>Contact No</label>
                             <input type="text" className="form-control" id="ContactNo" disabled={true}></input>
                         </div>
-                        <div style={{marginTop:"4px",textAlign:"center"}}>
-                            <Link to="/analytics"><button type="button" id="editBtn" className="btn" style={{marginTop:"10px",backgroundColor:'#1bbd7e',color:"black"}}>Analytics</button></Link>
+                        <div style={{marginTop:"15px",textAlign:"center"}}>
+                            <div className="row">
+                                <div className="col-md-6">
+                                    <Link to="/analytics"><button type="button" id="editBtn" className="btn" style={{marginTop:"10px",backgroundColor:'#1bbd7e',color:"black"}}>Analytics</button></Link>
+                                </div>
+                                <div className="col-md-6">
+                                    <Link to="/responses"><button type="button" id="viewResBtn" className="btn" style={{marginTop:"10px",backgroundColor:'coral',color:"black"}}>Responses</button></Link>
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>
