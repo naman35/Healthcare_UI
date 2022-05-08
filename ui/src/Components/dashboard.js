@@ -1,8 +1,32 @@
 import {Link} from 'react-router-dom'
 import {Button} from "@material-ui/core";
 import React from "react";
+import i18n from "i18next";
 import {Navbar,Container,Nav} from "react-bootstrap"
+import {initReactI18next, useTranslation} from "react-i18next";
+import {Translations_En} from "./translateEn";
+import {Translations_Fr} from "./translateFr";
+import {Translations_Hn} from "./translateHn";
+
+i18n
+	.use(initReactI18next)
+	.init({
+		resources:{
+			en:{translation:Translations_En},
+			fr:{translation:Translations_Fr},
+			hn:{translation:Translations_Hn}
+		},
+		lng:"en",
+		fallbackLng:"en",
+		interpolation:{escapeValue:false}
+	});
+
 function Dashboard(){
+	const { t } = useTranslation();
+	function updLang(val){
+		i18n.changeLanguage(val);
+	}
+
 	let pth = window.location.href;
 	let x = pth.indexOf("=");
 	let y = pth.length;
@@ -56,34 +80,34 @@ function Dashboard(){
         document.getElementById("tipsBtn").style.backgroundColor="#218622";
     }
     return <>
-		<div style={{backgroundImage:"url('https://wallpaperaccess.com/full/3910193.jpg')" ,backgroundSize: 'cover',
+
+
+		<div style={{backgroundImage:"url('https://images.unsplash.com/photo-1520962880247-cfaf541c8724?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVhY2V8ZW58MHx8MHx8&w=1000&q=80')" ,backgroundSize: 'cover',
 			backgroundRepeat: 'no-repeat'}}>
-			<Navbar bg="light" variant="light" style={{opacity:0.8}} >
-				<Container >
-					<Navbar.Brand href="landingpage">
-						Push-D
-					</Navbar.Brand>
-					<Nav className="me-auto" >
+					<Navbar bg="light" variant="light" style={{opacity:0.8}} >
+						<Container >
+							<Navbar.Brand href="landingpage">
+								Push-D
+							</Navbar.Brand>
+							<Nav className="me-auto" >
 
-						<Button href="login" variant="outline-success" style={{border:0}} >Logout</Button>
-						<Button href="signup" variant="outline-success" style={{border:0}}>Signup</Button>
-						<Button href="About" variant="outline-success" style={{border:0}}>About</Button>
-						<Button href="login" variant="outline-success" style={{border:0}}>ContactUs</Button>
-						<div className="btn-group">
-							<button type="button" className="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-								Translate
-							</button>
-							<ul className="dropdown-menu">
-								<li><a className="dropdown-item" href="#" >English</a></li>
-								<li><a className="dropdown-item" href="#" >French</a></li>
-								<li><a className="dropdown-item" href="#" >Hindi</a></li>
-							</ul>
-						</div>
-					</Nav>
-				</Container>
-			</Navbar>
-
-
+								<Button href="login" variant="outline-success" style={{border:0}} >Login</Button>
+								<Button href="signup" variant="outline-success" style={{border:0}}>Signup</Button>
+								<Button href="About" variant="outline-success" style={{border:0}}>About</Button>
+								<Button href="login" variant="outline-success" style={{border:0}}>ContactUs</Button>
+								<div className="btn-group">
+									<button type="button" className="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+										Translate
+									</button>
+									<ul className="dropdown-menu">
+										<li><a className="dropdown-item" href="#" onClick={()=>updLang('en')} >English</a></li>
+										<li><a className="dropdown-item" href="#" onClick={()=>updLang('fr')} >French</a></li>
+										<li><a className="dropdown-item" href="#" onClick={()=>updLang('hn')} >Hindi</a></li>
+									</ul>
+								</div>
+							</Nav>
+						</Container>
+					</Navbar>
         <div className="container" style={{textAlign:"center",marginTop:"10px",height:"20vw"}}>
             <iframe class="responsive-iframe" src="https://www.youtube.com/embed/tgbNymZ7vqY" height={"100%"} width={"50%"}></iframe>
         </div>
@@ -108,38 +132,25 @@ function Dashboard(){
         <div className="card shadow p-3 mb-5 bg-white rounded" style={{margin:"20px",backgroundColor:"white"}}>
                 <div className="card-body" id="overview" style={{textAlign:"left"}}>
                     <div id="0">
-                            <p><strong>OVERVIEW</strong></p>
-                                <p>The entire program is divided into two broad areas:
-                                    Essential and optional.</p>
+                            <p><strong>{t("OVERVIEW")}</strong></p>
+                                <p>{t("dashboardparaone")}</p>
                                 <p class="pclass">
-                                    <strong>ESSENTIAL ZONE:</strong>
+                                    <strong>{t("dashboardPara2")}</strong>
                                 </p>
                                 <p>
-                                    The <strong>essential zone</strong> contains sections which are
-                                    mandatory for you to complete. These follow a pre-designed
-                                    sequence. These sections cover techniques/approaches that are
-                                    commonly useful for most individuals dealing with depression. If
-                                    you find it very essential to move to a particular section,
-                                    ahead of sequence, please mail us so that we can do the needful.
-                                    Your journey through this essential zone is depicted in the
-                                    diagram given below. Please click SHOW MORE button to know more
-                                    about these sections. Your journey through this zone is depicted
-                                    in the diagram given below.
+									{t("dashboardPara3")}
                                 </p>
                                 <p class="pclass">
-                                    <strong>OPTIONAL ZONE:</strong>
+                                    <strong>{t("dashboardPara4")}</strong>
                                 </p>
                                 <p>
-                                    On the other hand, as the name indicates, <strong>optional
-                                        zone</strong> contains sections which are not mandatory to explore/go
-                                    over. You can decide to go through an optional zone section
-                                    depending on your need or preference.
+									{t("dashboardPara5")}
                                 </p>
                                 <div class="image">
                                     {/* <img alt="" src="images/path.png" width="1024px;" height="450px;" class="img-responsive">
                                     </img> */}
                                     <h2><span>
-                                        <a href="/session" className="btn btn-success" style={{marginTop:"10px",backgroundColor:'#15983e',color:"white",width:"30vw"}} data-toggle="modal" data-target="#showmoreModal">Switch to Exercise</a>
+                                        <a href="/session" className="btn btn-success" style={{marginTop:"10px",backgroundColor:'#15983e',color:"white",width:"30vw"}} data-toggle="modal" data-target="#showmoreModal">{t("dashboardLink1")}</a>
                                     </span></h2>
 
                                 </div>
@@ -147,7 +158,7 @@ function Dashboard(){
                 </div>
                 <div className="card-body"  style={{display:"none",textAlign:"left"}} id="signBoard">
                     <div id="1">
-                    <p><strong>SIGN BOARDS</strong></p>
+                    <p><strong>{t("dashboardPara6")}</strong></p>
                         <div className="row">
                             <div className="col-md-4">
                                 <img className="img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYPRLSISP2uoEdGxNPVFrz02gI2KWiJ_VwNA&usqp=CAU" height="190" width="190" alt="...">
@@ -155,14 +166,9 @@ function Dashboard(){
                             </div>
                             <div className="col-md-8">
                                 <h4>
-                                Knowledge Point
+									{t("dashboardH4_1")}
                                 </h4>
-                                This is the place where you can find information about a
-                                concept/technique that is introduced usually at the beginning
-                                of a section. It is a place where you learn why some
-                                concept/strategy is relevant for self-care for depression.
-                                Don't skip this basic step, even though you may feel like
-                                jumping to other steps.
+								{t("dashboardPara7")}
                             </div>
                         </div>
                         <hr></hr>
@@ -174,10 +180,9 @@ function Dashboard(){
                             </div>
                             <div className="col-md-8">
                                 <h4>
-                                    Discovery Point
+									{t("dashboardH4_2")}
                                 </h4>
-                                It is a point where you learn/discover something about
-                                yourself, usually through completing an exercise.
+								{t("dashboardPara8")}
                             </div>
                         </div>
                         <hr></hr>
@@ -189,11 +194,9 @@ function Dashboard(){
                             </div>
                             <div className="col-md-8">
                                 <h4>
-                                    Tool Box
+									{t("dashboardH4_3")}
                                 </h4>
-                                In the tool box, you can find a listing of different
-                                methods/ways/ideas to go about doing something that would help
-                                you to deal with depressive symptoms.
+								{t("dashboardPara9")}
                             </div>
                         </div>
                         <hr></hr>
@@ -205,11 +208,9 @@ function Dashboard(){
                             </div>
                             <div className="col-md-8">
                                 <h4>
-                                    Demo Point
+									{t("dashboardH4_4")}
                                 </h4>
-                                Similar to a journey one might undertake for learning to drive,
-                                this is a point where we demonstrate how to do something using
-                                an example.
+								{t("dashboardPara10")}
                             </div>
                         </div>
                         <hr></hr>
@@ -220,13 +221,9 @@ function Dashboard(){
                             </div>
                             <div className="col-md-8">
                                 <h4 className="media-heading">
-                                    Practice Point
+									{t("dashboardH4_5")}
                                 </h4>
-                                Knowledge point and tool box as well as demo point may be of
-                                little help unless you make efforts to apply what you have
-                                learnt to your situation. Practice point is the point wherein
-                                you try to apply what you learnt to make the learning
-                                personally relevant and beneficial.
+								{t("dashboardPara11")}
                             </div>
                         </div>
                         <hr></hr>
@@ -237,17 +234,13 @@ function Dashboard(){
                             </div>
                             <div className="col-md-8">
                                 <h4 className="media-heading">
-                                    Check Point
+									{t("dashboardH4_6")}
                                 </h4>
-                                These are for periodic monitoring of how you have been feeling.
-                                Keeping track of your feelings at periodic intervals helps us
-                                and helps you to track your journey and also gauge if you need
-                                some additional/different kind of support system.
+								{t("dashboardPara12")}
                             </div>
                         </div>
 
-                    </div><a href="/session" className="btn btn-success" style={{marginTop:"10px",backgroundColor:'#15983e',color:"white",width:"30vw"}} data-toggle="modal" data-target="#showmoreModal">Switch
-					to Exercise</a>
+                    </div><a href="/session" className="btn btn-success" style={{marginTop:"10px",backgroundColor:'#15983e',color:"white",width:"30vw"}} data-toggle="modal" data-target="#showmoreModal">{t("dashboardLink1")}</a>
                 </div>
                 <div className="card-body"  style={{display:"none",textAlign:"left"}} id="tips">
                     <div id="2">
@@ -333,8 +326,7 @@ function Dashboard(){
 								<br></br>
 							</ul>
                     </div>
-					<a href="/session" className="btn btn-success" style={{marginTop:"10px",backgroundColor:'#15983e',color:"white",width:"30vw"}} data-toggle="modal" data-target="#showmoreModal">Switch
-						to Exercise</a>
+					<a href="/session" className="btn btn-success" style={{marginTop:"10px",backgroundColor:'#15983e',color:"white",width:"30vw"}} data-toggle="modal" data-target="#showmoreModal">{t("dashboardLink1")}</a>
                 </div>
                 <div className="card-body" id="termUse" style={{display:"none",textAlign:"left"}}>
                     <div id="3">
@@ -761,6 +753,7 @@ function Dashboard(){
                 </div>
         </div>
 		</div>
+
     </>
 }
 
