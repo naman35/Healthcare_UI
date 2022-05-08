@@ -2,10 +2,8 @@ import { Routes ,Route,BrowserRouter } from 'react-router-dom';
 
 import './App.css';
 import Login from "./Components/login";
-import Profile from "./Components/suchi/profile"
 import Signup from "./Components/signup";
 import Dashboard from "./Components/dashboard";
-import UserProfile from "./Components/suchi/Userprofile";
 import Sessionlist1 from "./Components/sessionlist1";
 import Sessionlist2 from "./Components/sessionlist2";
 import Sessionlist3 from "./Components/sessionlist3";
@@ -25,6 +23,7 @@ import Landingpage from "./Components/LandingPage/landingpage"
 import Welcome1 from "./Components/Welcome";
 import Sessionintro from "./Components/sessionintro";
 import Quizfillup from "./Components/quiz/quizfillup";
+import Response from "./Components/response";
 
 import {Navbar,Container,Nav} from "react-bootstrap";
 
@@ -34,8 +33,6 @@ function App() {
         <BrowserRouter>
         <Routes>
             <Route path='/login' element={<Login/>} />
-            <Route path='/suchiprofile' element={<Profile/>} />
-            <Route path='/suchiuserprofile' element={<UserProfile/>} />
             <Route path='/signup' element={<Signup/>} />
             <Route path='/subsessionlist1' element={<Sessionlist1 />} />
             <Route path='/subsessionlist2' element={<Sessionlist2 />} />
@@ -57,7 +54,7 @@ function App() {
             <Route path='/quizfillup' element={<Quizfillup/>} />
             <Route path='/landingpage' element={<Landingpage />} />
             <Route path='/sessionintro' element={<Sessionintro />} />
-
+            <Route path='/response' element={<Response />} />
 
         </Routes>
         </BrowserRouter>

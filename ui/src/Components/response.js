@@ -13,18 +13,37 @@ function Responses(){
     }
     console.log(str);
     let pid = parseInt(str);
-    fetch("http://localhost:8084/patientResponese/"+pid,{
+    fetch("http://1839-103-156-19-229.ngrok.io/ViewResponse/23",{
         method:"GET",
     })
         .then((response) => response.json())
         .then((responseData)=>{
             console.log(responseData);
-            document.getElementById("FirstName").value = responseData.username;
-            document.getElementById("LastName").value = responseData.username;
-            document.getElementById("Address").value = responseData.id;
-            document.getElementById("ContactNo").value = responseData.role;
-            document.getElementById("age").value = responseData.id;
-        })
+            document.getElementById("responseList").innerHTML='';
+            let sz = responseData.length;
+            console.log(sz);
+            let html = '';
+            for(let i=0;i<sz;i++) {
+                let row = '';
+                if (i % 2 == 0) {
+                    row = '<tr style="background-color:lavender;">' +
+                        '<td>' + responseData[i].quesContent + '</td>' +
+                        '<td>' + responseData[i].sectionid + '</td>' +
+                        '<td>' + responseData[i].subsection_id + '</td>' +
+                        '<td>' + responseData[i].response + '</td>' +
+                        '</tr>';
+                } else {
+                    row = '<tr style="background-color:azure;">' +
+                        '<td>' + responseData[i].quesContent + '</td>' +
+                        '<td>' + responseData[i].sectionid + '</td>' +
+                        '<td>' + responseData[i].subsection_id + '</td>' +
+                        '<td>' + responseData[i].response + '</td>' +
+                        '</tr>';
+                }
+                html = html + row;
+            }
+            document.getElementById("responseList").innerHTML = html;
+        });
 
     return <>
         <div>
@@ -41,19 +60,6 @@ function Responses(){
                 </nav>
             </div>
             <div className="card shadow p-3 mb-5 bg-white rounded" style={{margin:"20px",backgroundColor:"white",textAlign:"left"}}>
-                <div className="card-header" style={{backgroundColor:"lightsteelblue"}}>
-                    <ul className="nav nav-tabs card-header-tabs" >
-                        <li className="nav-item" id="detailsTab" onClick={details} style={{backgroundColor:"white"}}>
-                            <a className="nav-link" href="#" style={{color:"black"}}>Patient Details</a>
-                        </li>
-                        <li className="nav-item" id="sectionsTab" onClick={sections}>
-                            <a className="nav-link" href="#"  style={{color:"black"}}>Sections performed</a>
-                        </li>
-                        <li className="nav-item" id="chatTab"  onClick={chat}>
-                            <a className="nav-link" href="#" style={{color:"black"}}>Chat</a>
-                        </li>
-                    </ul>
-                </div>
                 <div className="table-responsive" id="patientsList" style={{marginTop:"40px"}}>
                     <table className="table table-bordered border border-dark border-1 align-middle">
                         <thead>
@@ -72,7 +78,7 @@ function Responses(){
                             </th>
                         </tr>
                         </thead>
-                        <tbody id="travelList">
+                        <tbody id="responseList">
 
                         </tbody>
                     </table>

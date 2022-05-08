@@ -37,7 +37,7 @@ function PatientTrack(){
     //     3:"Manage Excessive Worries",
     //     4:"Learn Self Compassion"
     // }
-    fetch("http://localhost:8084/patientDetails/"+pid,{
+    fetch("http://1d85-103-156-19-229.ngrok.io/patientDetails/23",{
         method:"GET",
     })
         .then((response) => response.json())
@@ -114,6 +114,13 @@ function PatientTrack(){
         }
         console.log(res);
     }
+
+    function seeResponse()
+    {
+        window.location.href = '/response?id=23';
+        ///change this 23 to pid getting from url
+    }
+
     return <>
         <div>
             <div>
@@ -171,7 +178,7 @@ function PatientTrack(){
                                     <Link to="/analytics"><button type="button" id="editBtn" className="btn" style={{marginTop:"10px",backgroundColor:'#1bbd7e',color:"black"}}>Analytics</button></Link>
                                 </div>
                                 <div className="col-md-6">
-                                    <Link to="/responses"><button type="button" id="viewResBtn" className="btn" style={{marginTop:"10px",backgroundColor:'coral',color:"black"}}>Responses</button></Link>
+                                    <button type="button" id="viewResBtn" className="btn"  style={{marginTop:"10px",backgroundColor:'coral',color:"black"}} onClick={seeResponse}>Responses</button>
                                 </div>
                             </div>
                         </div>

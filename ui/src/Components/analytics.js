@@ -51,15 +51,18 @@ const dataLine = {
         },
     ],
 };
+let compl = 0;
+let ncompl = 0;
+
 const paperStyle={padding :20,height:'90vh',width:400, margin:"20px auto"}
 const data = {
     labels: ['Completed','Remaining'],
     datasets: [
         {
-            label: "Session Completed",
+            label: 'Completed',
             fill: false,
             lineTension: 0.1,
-            backgroundColor: "#e07e71",
+            backgroundColor: ["lightgreen","#e07e71"],
             borderColor: "rgb(178,103,80)",
             borderCapStyle: "butt",
             borderDash: [],
@@ -74,11 +77,25 @@ const data = {
             pointHoverBorderWidth: 2,
             pointRadius: 1,
             pointHitRadius: 10,
-            data: [65,35],
+            data:[]
         },
     ],
 };
+
+fetch("http://7d77-119-161-98-68.ngrok.io/analytics/23",{
+    method:"get"
+})
+    .then((response) => response.json())
+    .then((responseData)=>{
+        console.log(responseData);
+        // compl = responseData;
+        // ncompl = 5 - responseData;
+        data.datasets[0].data.push(1);
+        data.datasets[0].data.push(4);
+    });
+
 const Analytics = () => {
+
     return (<div style={{backgroundImage:"url('https://images.unsplash.com/photo-1520962880247-cfaf541c8724?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVhY2V8ZW58MHx8MHx8&w=1000&q=80')" ,backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat'}}>
         <Navbar bg="light" variant="light" style={{opacity:0.8}} >
