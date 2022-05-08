@@ -7,6 +7,7 @@ import {initReactI18next, useTranslation} from "react-i18next";
 import {Translations_En} from "./translateEn";
 import {Translations_Fr} from "./translateFr";
 import {Translations_Hn} from "./translateHn";
+import axios from "axios";
 
 i18n
 	.use(initReactI18next)
@@ -79,6 +80,17 @@ function Dashboard(){
         document.getElementById("signBoardBtn").style.backgroundColor="#218622";
         document.getElementById("tipsBtn").style.backgroundColor="#218622";
     }
+
+	function stoptime(){
+		axios.post('http://localhost:8084/addLogoutTimestamp', {
+			userId:pid
+		})
+			.then(function (response) {
+				console.log(response.data); })
+			.catch(function (error) {
+				console.log(error);
+			});
+	}
     return <>
 
 
@@ -91,7 +103,7 @@ function Dashboard(){
 							</Navbar.Brand>
 							<Nav className="me-auto" >
 
-								<Button href="login" variant="outline-success" style={{border:0}} >Login</Button>
+								<Button href="login" onClick={stoptime} variant="outline-success" style={{border:0}} >Logout</Button>
 								<Button href="signup" variant="outline-success" style={{border:0}}>Signup</Button>
 								<Button href="About" variant="outline-success" style={{border:0}}>About</Button>
 								<Button href="login" variant="outline-success" style={{border:0}}>ContactUs</Button>

@@ -10,7 +10,6 @@ import axios from "axios";
 const Login=()=>{
     const [username, setusername] = useState("");
     const [password, setPassword] = useState("");
-    const [res, setRes] = useState("");
     const [error, setError] = useState('');
 
     function validateForm() {
@@ -56,27 +55,30 @@ const Login=()=>{
             role: "ROLE_PATIENT"
         })
             .then(function (response) {
-                console.log(response.data);
-                setRes(response.data);
-                if(res.role === "ROLE_PATIENT")
+                console.log(response.data.id);
+                let res=response.data.id
+                let role=response.data.role;
+                console.log("res="+res);
+                axios.post('http://localhost:8084/addLoginTimestamp', {
+                    userId:res
+                })
+                    .then(function (response) {
+                        console.log(response.data); })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+                if(role === "ROLE_PATIENT")
                 {
-                    window.location.href = '/dashboard?id=' + res.id ;
+                    window.location.href = '/dashboard?id='+res ;
                 }
                 else {
-                    window.location.href = '/doctorDashboard?id=' + res.id;
+                    window.location.href = '/doctorDashboard?id='+res;
                 }
             })
             .catch(function (error) {
                 console.log(error);
             });
-        axios.post('https://jsonplaceholder.typicode.com/users', {
-            userid:res.id
-        })
-            .then(function (response) {
-                console.log(response.data); })
-            .catch(function (error) {
-                console.log(error);
-            });
+
      };
 
     const paperStyle={padding :20,height:'88vh',width:400, margin:"20px auto"}
