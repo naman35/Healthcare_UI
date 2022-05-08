@@ -20,7 +20,7 @@ import Session from "./Components/session";
 import Bar from "./Components/bar"
 import ForgotPassword from "./Components/forgotPassword";
 import Landingpage from "./Components/LandingPage/landingpage"
-import Welcome1 from "./Components/Welcome";
+// import Welcome1 from "./Components/Welcome";
 import Sessionintro from "./Components/sessionintro";
 import Quizfillup from "./Components/quiz/quizfillup";
 import Response from "./Components/response";
@@ -48,7 +48,7 @@ function App() {
             <Route path='/mainchat' element={<Mainchat/>} />
             <Route path='/preRegister' element={<PreRegister/>} />
             <Route path='/forgotPassword' element={<ForgotPassword/>} />
-            <Route path='*' element={<Welcome1 />} />
+            {/* <Route path='*' element={<Welcome1 />} /> */}
             <Route path='/session' element={<Session />} />
             <Route path='/bar' element={<Bar/>} />
             <Route path='/quizfillup' element={<Quizfillup/>} />

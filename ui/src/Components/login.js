@@ -10,6 +10,7 @@ import axios from "axios";
 const Login=()=>{
     const [username, setusername] = useState("");
     const [password, setPassword] = useState("");
+    const [res, setRes] = useState("");
     const [error, setError] = useState('');
 
     function validateForm() {
@@ -49,14 +50,14 @@ const Login=()=>{
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        axios.post('https://jsonplaceholder.typicode.com/users', {
+        axios.post('http://localhost:8084/login', {
             username: username,
             password: password,
             role: "ROLE_PATIENT"
         })
             .then(function (response) {
                 console.log(response.data);
-                let res =  response.data;
+                setRes(response.data);
                 if(res.role === "ROLE_PATIENT")
                 {
                     window.location.href = '/dashboard?id=' + res.id ;
@@ -68,11 +69,14 @@ const Login=()=>{
             .catch(function (error) {
                 console.log(error);
             });
-        // axios.post('https://jsonplaceholder.typicode.com/users', {
-        //     uid:res.id
-        // })
-        //     .then(function (response) {
-        //         console.log(response.data); })
+        axios.post('https://jsonplaceholder.typicode.com/users', {
+            userid:res.id
+        })
+            .then(function (response) {
+                console.log(response.data); })
+            .catch(function (error) {
+                console.log(error);
+            });
      };
 
     const paperStyle={padding :20,height:'88vh',width:400, margin:"20px auto"}

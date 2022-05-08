@@ -28,6 +28,7 @@ export default function Blog() {
   }
 
   return (
+
     <Wrapper id="blog">
       <div className="whiteBg">
         <div className="container">
@@ -64,8 +65,8 @@ export default function Blog() {
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <BlogBox
-                title="Why PUSH-D Developed?"
-                text="Depression is a common mental health concern which affects a large proportion of individuals at any given point of time. Depression can impact our functioning and quality of life even when the symptoms are mild in severity or too minimal to label it as clinical depression or a disorder."
+                title={t("blogTitle1")}
+                text={t("blogText1")}
                 tag=""
                 author=""
                 action={() => alert("clicked")}
@@ -75,8 +76,8 @@ export default function Blog() {
           <div className="row textCenter">
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <BlogBox
-                title="Technology Support"
-                text="PUSH-D was developed by a team of young scholars under the leadership of Professor T.K. Srikanth, E-Health Research Center,(IIIT-B), Bangalore. The program is supported on an ongoing basis by the team at IIIT-B and NIMHANS Data Center, led by Ms. Sindhu M.G."
+                title={t("blogTitle2")}
+                text={t("blogText2")}
                 tag=""
                 author=""
                 action={() => alert("clicked")}
@@ -84,8 +85,8 @@ export default function Blog() {
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4" >
               <BlogBox
-                title="Computer/Mobile App"
-                text="The program requires you to access your desktop/laptop/smartphone.PUSH-D mobile app,the web-based version can be accessed via desktop/laptop. As PUSH-D is an intensive, interactive self-help course, several users prefer accessing it via the web-version."
+                title={t("blogTitle3")}
+                text={t("blogText3")}
                 tag=""
                 author=""
                 action={() => alert("clicked")}
@@ -93,8 +94,8 @@ export default function Blog() {
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <BlogBox
-                title="Progress Section"
-                text=" These are sections of the program ordered in a sequence. These are sections typically helpful for individuals with depressive symptoms. Apart from this, there are some optional sections that you can explore at any point and use depending on your need/concerns.."
+                title={t("blogTitle4")}
+                text={t("blogText4")}
                 tag=""
                 author=""
                 action={() => alert("clicked")}

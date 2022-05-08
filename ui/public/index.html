@@ -28,6 +28,13 @@
     <title>React App</title>
   </head>
   <body>
+    <?php
+      header ("Access-Control-Allow-Origin: *");
+      header ("Access-Control-Expose-Headers: Content-Length, X-JSON");
+      header ("Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS");
+      header ("Access-Control-Allow-Headers: *");
+      header ("HTTP/1.1 200 OK");
+    ?>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
