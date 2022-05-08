@@ -68,7 +68,12 @@ const Login=()=>{
             .catch(function (error) {
                 console.log(error);
             });
-    };
+        // axios.post('https://jsonplaceholder.typicode.com/users', {
+        //     uid:res.id
+        // })
+        //     .then(function (response) {
+        //         console.log(response.data); })
+     };
 
     const paperStyle={padding :20,height:'88vh',width:400, margin:"20px auto"}
     const avatarStyle={backgroundColor:'#1bbd7e'}

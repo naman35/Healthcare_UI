@@ -4,22 +4,34 @@ import {Navbar,Container,Nav} from "react-bootstrap";
 import {EmojiPeople} from "@material-ui/icons";
 import {Link} from "react-router-dom";
 function Checkstatus() {
-    let flag=2;
+    let flag=0;
     if(flag==0){
-        return( <Button style={{backgroundColor:'green' }} >Completed</Button>);
+        return( <Button href='/subsessionlist1' style={{backgroundColor:'green',width:'408px' }} >Completed</Button>);
     }
     if(flag==1){
-        return( <Button style={{backgroundColor:'yellow' }} >Partially Complete</Button>);
+        return( <Button href='/subsessionlist1' style={{backgroundColor:'yellow',width:'408px'  }} >Partially Complete</Button>);
     }
     if(flag==2){
-        return( <Button style={{backgroundColor:'red' }} >Not Completed</Button>);
+        return( <Button href='/subsessionlist1' style={{backgroundColor:'red',width:'408px'  }} >Not Completed</Button>);
     }
     else{
-        return( <Button style={{backgroundColor:'blue' }} >No Server Response</Button>);
+        return( <Button href='/subsessionlist1' style={{backgroundColor:'blue',width:'408px'  }} >No Server Response</Button>);
     }
 
 
 }
+function Checkstatusskippable() {
+    let flagg=0;
+    if(flagg==0){
+        return( <Button href='' style={{backgroundColor:'grey' }} >Required</Button>);
+    }
+    if(flagg==1){
+        return( <Button href='' style={{backgroundColor:'yellow' }} >Skippable</Button>);
+    }
+
+    else{
+        return( <Button href='' style={{backgroundColor:'blue' }} >No Server Response</Button>);
+    }}
 function Sub1() {
     document.getElementById("subsection1").style.display="block";
     document.getElementById("subsection2").style.display="none";
@@ -110,6 +122,8 @@ function Sessionintro() {
 
                                 {/*<Button style={{backgroundColor:'green'}}>Complete</Button><Button style={{backgroundColor:'yellow'}}>Partially Completion</Button><Button style={{backgroundColor:'red'}}>Not Completed</Button>*/}
                             <Checkstatus />
+                            <Checkstatusskippable />
+
 
                         </div></div>
                         <div className="card-body"  style={{display:"none",textAlign:"left"}} id="subsection2">
@@ -117,6 +131,8 @@ function Sessionintro() {
 
                                 <p><strong>STATUS OF COMPLETION:</strong></p>
                                 <Checkstatus />
+                                <Checkstatusskippable />
+
                                 {/*<Button style={{backgroundColor:'green'}}>Complete</Button><Button style={{backgroundColor:'yellow'}}>Partially Completion</Button><Button style={{backgroundColor:'red'}}>Not Completed</Button>*/}
 
 
@@ -127,6 +143,8 @@ function Sessionintro() {
                                     <p><strong>STATUS OF COMPLETION:</strong></p>
 
                                     <Checkstatus />
+                                    <Checkstatusskippable />
+
 
 
                                 </div></div>
@@ -137,6 +155,8 @@ function Sessionintro() {
 
                                         {/*<Button style={{backgroundColor:'green'}}>Complete</Button><Button style={{backgroundColor:'yellow'}}>Partially Completion</Button><Button style={{backgroundColor:'red'}}>Not Completed</Button>*/}
                                         <Checkstatus />
+                                        <Checkstatusskippable />
+
 
                                     </div></div>
                                     <div className="card-body"  style={{display:"none",textAlign:"left"}} id="subsection5">
@@ -146,6 +166,7 @@ function Sessionintro() {
 
                                             {/*<Button style={{backgroundColor:'green'}}>Complete</Button><Button style={{backgroundColor:'yellow'}}>Partially Completion</Button><Button style={{backgroundColor:'red'}}>Not Completed</Button>*/}
                                             <Checkstatus />
+                                            <Checkstatusskippable />
 
                                         </div></div>
 

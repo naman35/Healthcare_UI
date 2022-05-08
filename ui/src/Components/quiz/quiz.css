@@ -11,6 +11,8 @@
 
 
 .body1 {
+    background-image: url("https://images4.alphacoders.com/114/1144182.jpg");
+    backgroundSize: 'cover';
     background-color: #d0b8b8;
     display: flex;
     justify-content: center;
@@ -19,7 +21,8 @@
 }
 
 .app1 {
-    background-color: #36594b;
+
+    background-color: #dbb0e1;
     width: 450px;
     min-height: 200px;
     height: min-content;
