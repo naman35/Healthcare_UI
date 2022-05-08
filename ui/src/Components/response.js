@@ -13,7 +13,7 @@ function Responses(){
     }
     console.log(str);
     let pid = parseInt(str);
-    fetch("http://1839-103-156-19-229.ngrok.io/ViewResponse/23",{
+    fetch(`http://1839-103-156-19-229.ngrok.io/ViewResponse/${localStorage.getItem('id')}`,{
         method:"GET",
     })
         .then((response) => response.json())

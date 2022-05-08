@@ -26,6 +26,7 @@ import Quizfillup from "./Components/quiz/quizfillup";
 import Response from "./Components/response";
 
 import {Navbar,Container,Nav} from "react-bootstrap";
+import FunVideo from "./Components/FunVideo";
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
             <Route path='/landingpage' element={<Landingpage />} />
             <Route path='/sessionintro' element={<Sessionintro />} />
             <Route path='/response' element={<Response />} />
+            <Route path='/funvideo' element={<FunVideo />} />
 
         </Routes>
         </BrowserRouter>

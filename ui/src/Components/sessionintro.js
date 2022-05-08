@@ -126,6 +126,10 @@ function Sub5() {
     document.getElementById("subsection5").style.display="block";
 }
 
+function changePage(){
+    window.location.href = "http://localhost:3000/response";
+}
+
 function Sessionintro() {
     const paperStyle={padding :20,height:'92vh',width:480, margin:"20px auto",opacity:0.8}
     const avatarStyle={backgroundColor:'#1bbd7e'}
@@ -173,6 +177,7 @@ function Sessionintro() {
                     <Paper><Button id="overviewBtn3" type="button" onClick={Sub3}><b>Section-3:</b>Dealing with Depression</Button></Paper><br></br>
                     <Paper><Button id="overviewBtn4" type="button" onClick={Sub4}><b>Section-4:</b>Learn Self Help</Button></Paper><br></br>
                     <Paper><Button id="overviewBtn5" type="button" onClick={Sub5}><b>Section-5:</b>Strengthen your Feelings</Button></Paper><br></br>
+                    <Button onClick={changePage}>Click Me</Button>
                     <div className="card-body"  style={{display:"none",textAlign:"left"}} id="subsection1">
                         <div id="2">
 
