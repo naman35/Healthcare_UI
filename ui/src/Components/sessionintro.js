@@ -3,10 +3,10 @@ import {Avatar, Button, Grid, Paper, TextField} from "@material-ui/core";
 import {Navbar,Container,Nav} from "react-bootstrap";
 import {EmojiPeople} from "@material-ui/icons";
 import {Link} from "react-router-dom";
-function Checkstatus() {
+function Checkstatus1() {
     let flag=0;
     if(flag==0){
-        return( <Button href='/subsessionlist1' style={{backgroundColor:'green',width:'408px' }} >Completed</Button>);
+        return( <Button href='/subsessionlist1'  style={{backgroundColor:'green',width:'408px' }} >Completed</Button>);
     }
     if(flag==1){
         return( <Button href='/subsessionlist1' style={{backgroundColor:'yellow',width:'408px'  }} >Partially Complete</Button>);
@@ -17,8 +17,66 @@ function Checkstatus() {
     else{
         return( <Button href='/subsessionlist1' style={{backgroundColor:'blue',width:'408px'  }} >No Server Response</Button>);
     }
-
-
+}
+function Checkstatus2() {
+    let flag=0;
+    if(flag==0){
+        return( <Button href='/subsessionlist2'  style={{backgroundColor:'green',width:'408px' }} >Completed</Button>);
+    }
+    if(flag==1){
+        return( <Button href='/subsessionlist2' style={{backgroundColor:'yellow',width:'408px'  }} >Partially Complete</Button>);
+    }
+    if(flag==2){
+        return( <Button href='/subsessionlist2' style={{backgroundColor:'red',width:'408px'  }} >Not Completed</Button>);
+    }
+    else{
+        return( <Button href='/subsessionlist2' style={{backgroundColor:'blue',width:'408px'  }} >No Server Response</Button>);
+    }
+}
+function Checkstatus3() {
+    let flag=0;
+    if(flag==0){
+        return( <Button href='/subsessionlist3'  style={{backgroundColor:'green',width:'408px' }} >Completed</Button>);
+    }
+    if(flag==1){
+        return( <Button href='/subsessionlist3' style={{backgroundColor:'yellow',width:'408px'  }} >Partially Complete</Button>);
+    }
+    if(flag==2){
+        return( <Button href='/subsessionlist3' style={{backgroundColor:'red',width:'408px'  }} >Not Completed</Button>);
+    }
+    else{
+        return( <Button href='/subsessionlist3' style={{backgroundColor:'blue',width:'408px'  }} >No Server Response</Button>);
+    }
+}
+function Checkstatus4() {
+    let flag=0;
+    if(flag==0){
+        return( <Button href='/subsessionlist4'  style={{backgroundColor:'green',width:'408px' }} >Completed</Button>);
+    }
+    if(flag==1){
+        return( <Button href='/subsessionlist4' style={{backgroundColor:'yellow',width:'408px'  }} >Partially Complete</Button>);
+    }
+    if(flag==2){
+        return( <Button href='/subsessionlist4' style={{backgroundColor:'red',width:'408px'  }} >Not Completed</Button>);
+    }
+    else{
+        return( <Button href='/subsessionlist4' style={{backgroundColor:'blue',width:'408px'  }} >No Server Response</Button>);
+    }
+}
+function Checkstatus5() {
+    let flag=0;
+    if(flag==0){
+        return( <Button href='/subsessionlist5'  style={{backgroundColor:'green',width:'408px' }} >Completed</Button>);
+    }
+    if(flag==1){
+        return( <Button href='/subsessionlist5' style={{backgroundColor:'yellow',width:'408px'  }} >Partially Complete</Button>);
+    }
+    if(flag==2){
+        return( <Button href='/subsessionlist5' style={{backgroundColor:'red',width:'408px'  }} >Not Completed</Button>);
+    }
+    else{
+        return( <Button href='/subsessionlist5' style={{backgroundColor:'blue',width:'408px'  }} >No Server Response</Button>);
+    }
 }
 function Checkstatusskippable() {
     let flagg=0;
@@ -121,7 +179,7 @@ function Sessionintro() {
                             <p><strong>STATUS OF COMPLETION:</strong></p>
 
                                 {/*<Button style={{backgroundColor:'green'}}>Complete</Button><Button style={{backgroundColor:'yellow'}}>Partially Completion</Button><Button style={{backgroundColor:'red'}}>Not Completed</Button>*/}
-                            <Checkstatus />
+                            <Checkstatus1/>
                             <Checkstatusskippable />
 
 
@@ -130,7 +188,7 @@ function Sessionintro() {
                             <div id="2">
 
                                 <p><strong>STATUS OF COMPLETION:</strong></p>
-                                <Checkstatus />
+                                <Checkstatus2/>
                                 <Checkstatusskippable />
 
                                 {/*<Button style={{backgroundColor:'green'}}>Complete</Button><Button style={{backgroundColor:'yellow'}}>Partially Completion</Button><Button style={{backgroundColor:'red'}}>Not Completed</Button>*/}
@@ -142,7 +200,7 @@ function Sessionintro() {
 
                                     <p><strong>STATUS OF COMPLETION:</strong></p>
 
-                                    <Checkstatus />
+                                    <Checkstatus3/>
                                     <Checkstatusskippable />
 
 
@@ -154,7 +212,7 @@ function Sessionintro() {
                                         <p><strong>STATUS OF COMPLETION:</strong></p>
 
                                         {/*<Button style={{backgroundColor:'green'}}>Complete</Button><Button style={{backgroundColor:'yellow'}}>Partially Completion</Button><Button style={{backgroundColor:'red'}}>Not Completed</Button>*/}
-                                        <Checkstatus />
+                                        <Checkstatus4/>
                                         <Checkstatusskippable />
 
 
@@ -165,7 +223,7 @@ function Sessionintro() {
                                             <p><strong>STATUS OF COMPLETION:</strong></p>
 
                                             {/*<Button style={{backgroundColor:'green'}}>Complete</Button><Button style={{backgroundColor:'yellow'}}>Partially Completion</Button><Button style={{backgroundColor:'red'}}>Not Completed</Button>*/}
-                                            <Checkstatus />
+                                            <Checkstatus5/>
                                             <Checkstatusskippable />
 
                                         </div></div>

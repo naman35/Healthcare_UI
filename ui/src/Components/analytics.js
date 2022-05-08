@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Line,Pie,Doughnut} from 'react-chartjs-2'
 import { Grid,Paper, Avatar, TextField, Button, Typography,Link } from '@material-ui/core'
 import {Navbar,Container,Nav} from "react-bootstrap"
@@ -51,50 +51,53 @@ const dataLine = {
         },
     ],
 };
-let compl = 0;
-let ncompl = 0;
-
-const paperStyle={padding :20,height:'90vh',width:400, margin:"20px auto"}
-const data = {
-    labels: ['Completed','Remaining'],
-    datasets: [
-        {
-            label: 'Completed',
-            fill: false,
-            lineTension: 0.1,
-            backgroundColor: ["lightgreen","#e07e71"],
-            borderColor: "rgb(178,103,80)",
-            borderCapStyle: "butt",
-            borderDash: [],
-            borderDashOffset: 0.0,
-            borderJoinStyle: "miter",
-            pointBorderColor: "rgb(231,129,45)",
-            pointBackgroundColor: "#fff",
-            pointBorderWidth: 1,
-            pointHoverRadius: 5,
-            pointHoverBackgroundColor: "rgb(148,59,21)",
-            pointHoverBorderColor: "rgba(220,220,220,1)",
-            pointHoverBorderWidth: 2,
-            pointRadius: 1,
-            pointHitRadius: 10,
-            data:[]
-        },
-    ],
-};
-
-fetch("http://7d77-119-161-98-68.ngrok.io/analytics/23",{
-    method:"get"
-})
-    .then((response) => response.json())
-    .then((responseData)=>{
-        console.log(responseData);
-        // compl = responseData;
-        // ncompl = 5 - responseData;
-        data.datasets[0].data.push(1);
-        data.datasets[0].data.push(4);
-    });
 
 const Analytics = () => {
+    const [compl,setCompl] = useState(0);
+    const [ncompl,setNcompl] = useState(0);
+
+
+    fetch("http://7d77-119-161-98-68.ngrok.io/analytics/23",{
+        method:"get"
+    })
+        .then((response) => response.json())
+        .then((responseData)=>{
+            console.log(responseData);
+            setCompl(responseData);
+            setNcompl(5 - responseData);
+        });
+
+    console.log(compl);
+    console.log(ncompl);
+
+    const paperStyle={padding :20,height:'90vh',width:400, margin:"20px auto"}
+    const data = {
+        labels: ['Completed','Remaining'],
+        datasets: [
+            {
+                label: 'Completed',
+                fill: false,
+                lineTension: 0.1,
+                backgroundColor: ["lightgreen","#e07e71"],
+                borderColor: "rgb(178,103,80)",
+                borderCapStyle: "butt",
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: "miter",
+                pointBorderColor: "rgb(231,129,45)",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 1,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgb(148,59,21)",
+                pointHoverBorderColor: "rgba(220,220,220,1)",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                data:[compl,ncompl]
+            },
+        ],
+    };
+
 
     return (<div style={{backgroundImage:"url('https://images.unsplash.com/photo-1520962880247-cfaf541c8724?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVhY2V8ZW58MHx8MHx8&w=1000&q=80')" ,backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat'}}>
