@@ -19,6 +19,7 @@ export default function Quizmcq() {
 
     const [sub_section_id,setSubsectionId] = useState(0);
     const [qid, setQid] = useState("");
+    const [qid2, setQid2] = useState("")
     const [question, setQuestion] = useState("");
     const [questiona, setQuestiona] = useState("[]");
     const [questionb, setQuestionb] = useState("");
@@ -31,18 +32,23 @@ export default function Quizmcq() {
     const [question2d, setQuestion2d] = useState("");
     axios.get('http://localhost:8084/api/GetBySection/'+pid)
         .then(response => {
-            setQid(response.data.qid);
+
+            setQid(response.data[3].qid)
             setQuestion(response.data[3].content)
             setQuestiona(response.data[3].a)
             setQuestionb(response.data[3].b)
             setQuestionc(response.data[3].c)
             setQuestiond(response.data[3].d)
+            setQid2(response.data[5].qid)
             setQuestion2(response.data[5].content)
             setQuestion2a(response.data[5].a)
             setQuestion2b(response.data[5].b)
             setQuestion2c(response.data[5].c)
             setQuestion2d(response.data[5].d)
+
         });
+    let qidd=[qid,qid2]
+    console.log(qidd);
     const questions = [
         {
             questionText: question,
@@ -73,11 +79,10 @@ export default function Quizmcq() {
         console.log(answerText);
 
         let obj = {
-            sectionId:"",
             subsectionId:"",
-            qid:"",
-            patient:"",
-            response:"",
+            qid:qidd[currentQuestion],
+            patient:localStorage.getItem("id"),
+            response:answerText,
         }
 
         fetch("http://localhost:8084/addQuiz",{
@@ -87,7 +92,9 @@ export default function Quizmcq() {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             }
-        })
+        }).then((response) => response.json())
+            .then((responseData)=>{
+                console.log(responseData);})
 
         const nextQuestion = currentQuestion + 1;
         if (nextQuestion < questions.length) {

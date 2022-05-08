@@ -48,7 +48,7 @@ function App() {
             <Route path='/mainchat' element={<Mainchat/>} />
             <Route path='/preRegister' element={<PreRegister/>} />
             <Route path='/forgotPassword' element={<ForgotPassword/>} />
-            {/* <Route path='*' element={<Welcome1 />} /> */}
+             {/*<Route path='*' element={<Welcome1 />} />*/}
             <Route path='/session' element={<Session />} />
             <Route path='/bar' element={<Bar/>} />
             <Route path='/quizfillup' element={<Quizfillup/>} />

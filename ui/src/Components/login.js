@@ -63,17 +63,20 @@ const Login=()=>{
                     userId:res
                 })
                     .then(function (response) {
-                        console.log(response.data); })
+                        localStorage.setItem("id",response.data.userId);
+                        console.clear();
+                        console.log(response.data);
+                        if(role === "ROLE_PATIENT")
+                        {
+                            window.location.href = '/dashboard?id='+res ;
+                        }
+                        else {
+                            window.location.href = '/doctorDashboard?id='+res;
+                        }
+                    })
                     .catch(function (error) {
                         console.log(error);
                     });
-                if(role === "ROLE_PATIENT")
-                {
-                    window.location.href = '/dashboard?id='+res ;
-                }
-                else {
-                    window.location.href = '/doctorDashboard?id='+res;
-                }
             })
             .catch(function (error) {
                 console.log(error);
