@@ -4,6 +4,19 @@ import axios from 'axios';
 import {Avatar, Button, Grid, Paper, TextField} from "@material-ui/core";
 
 export default function Quizmcq() {
+    let pth = window.location.href;
+    let x = pth.indexOf("=");
+    let y = pth.length;
+    let k = x+1;
+    let str = "";
+    while(k<y)
+    {
+        str = str + pth[k];
+        k++;
+    }
+    console.log(str);
+    let pid = parseInt(str);
+    console.log(pid);
     const [qid, setQid] = useState("");
     const [question, setQuestion] = useState("");
     const [questiona, setQuestiona] = useState("[]");
@@ -15,7 +28,7 @@ export default function Quizmcq() {
     const [question2b, setQuestion2b] = useState("");
     const [question2c, setQuestion2c] = useState("");
     const [question2d, setQuestion2d] = useState("");
-    axios.get('http://localhost:8084/api/GetBySection/1')
+    axios.get('http://localhost:8084/api/GetBySection/'+pid)
         .then(response => {
             setQid(response.data.qid);
             setQuestion(response.data[3].content)
@@ -28,11 +41,7 @@ export default function Quizmcq() {
             setQuestion2b(response.data[5].b)
             setQuestion2c(response.data[5].c)
             setQuestion2d(response.data[5].d)
-
-            console.log("qid="+qid)
-
         });
-    console.log("qid2="+question)
     const questions = [
         {
             questionText: question,

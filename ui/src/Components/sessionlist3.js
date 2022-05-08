@@ -44,13 +44,13 @@ function Sessionlist3() {
                         <h3><i>Sub-Session Flow</i></h3>
 
                     </Grid>
-                    <Paper><h2>Section-1:Understanding The Problem</h2></Paper>
+                    <Paper><h2>Section-3:Dealing with Depression</h2></Paper>
                     <br></br>
                     <Paper style={{backgroundColor:'#d7e367'}}>Sometimes it's not enough to kow what things mean;sometimes you have to know what things dont't mean.-<i>Bob Dylan</i></Paper>
-                    <br/><Paper><Button id="overviewBtn" type="button" ><b>Sub-Section-1:</b>Knowledge Point</Button></Paper><br></br>
-                    <Paper><Button id="overviewBtn2" type="button" ><b>Sub-Section-2:</b>Tool Box</Button></Paper><br></br>
-                    <Paper><Button id="overviewBtn3" type="button" ><b>Sub-Section-3:</b>Never Have I Ever</Button></Paper><br></br>
-                    <Paper><Button id="overviewBtn4" type="button" ><b>Sub-Section-4:</b>Chill Time(Optional)</Button></Paper><br></br>
+                    <br/><Paper><Button href="/quizmcq?id=3" type="button" ><b>Sub-Section-1:</b>Knowledge Point</Button></Paper><br></br>
+                    <Paper><Button href="/quizfillup?id=3" type="button" ><b>Sub-Section-2:</b>Tool Box</Button></Paper><br></br>
+                    <Paper><Button href="/quizmcq?id=3" type="button" ><b>Sub-Section-3:</b>Never Have I Ever</Button></Paper><br></br>
+                    <Paper><Button href="/quizfillup?id=3" type="button" ><b>Sub-Section-4:</b>Chill Time(Optional)</Button></Paper><br></br>
 
 
                     {/*<Typography >*/}

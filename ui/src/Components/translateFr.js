@@ -8,6 +8,15 @@ export const Translations_Fr = {
     newPassword:"nouveau mot de passe",
     confPassword:"Confirmez le mot de passe",
     submit:"Soumettre",
+    heybuddy:"Hé mon pote",
+    forwhom:"Pour qui?",
+    whattoexpect:"À quoi s'attendre?",
+    whattoexpectpara:"Si vous rencontrez un type de crise au moment de l'inscription ou lors de l'utilisation de ce programme, l'équipe PUSH-D vous recommandera fortement de consulter immédiatement et directement un professionnel de la santé mentale qualifié/de vous connecter à une ligne d'assistance/autre service d'urgence approprié.",
+    forwhompara:"Ce programme d'auto-soins est conçu pour les personnes qui présentent des niveaux légers (faible gravité) de symptômes dépressifs. Il s'agit d'un programme d'auto-soins pour les personnes qui présentent des niveaux légers de symptômes dépressifs et qui souhaitent l'essayer comme prise en charge de première intention. programme n'est PAS destiné au diagnostic.\n",
+    WhatisPUSHD:"Qu'est-ce que Push-D ?",
+    para:"PUSH-D (Practice and Use Self-Help for Depression) est un programme informatisé d'auto-soins qui vise à autonomiser les individus en offrant un espace pour apprendre, renforcer et pratiquer des compétences psychologiques qui peuvent être utiles pour faire face aux symptômes dépressifs.\n" +
+        "\n" +
+        "              Ce programme n'est PAS destiné au diagnostic de la dépression et ne remplace pas les services professionnels fournis par un professionnel de la santé mentale.",
     OVERVIEW: "APERÇU",
     dashboardparaone:"L'ensemble du programme est divisé en deux grands domaines:\n" +
         "                                    Indispensable et facultatif.",
@@ -58,5 +67,12 @@ export const Translations_Fr = {
         "                                Garder une trace de vos sentiments à intervalles réguliers nous aide\n" +
         "                                et vous aide à suivre votre voyage et également à évaluer si vous avez besoin\n" +
         "                                un système de soutien supplémentaire/différent.",
-
+    blogTitle1:"Pourquoi PUSH-D a-t-il été développé ?",
+    blogText1:"La dépression est un problème de santé mentale courant qui affecte une grande proportion de personnes à un moment donné. La dépression peut avoir un impact sur notre fonctionnement et notre qualité de vie même lorsque les symptômes sont légers ou trop minimes pour être qualifiés de dépression clinique ou de trouble.",
+    blogTitle2:"Assistance technologique",
+    blogText2:"PUSH-D a été développé par une équipe de jeunes chercheurs sous la direction du professeur T.K. Srikanth, Centre de recherche sur la santé en ligne (IIIT-B), Bangalore. Le programme est soutenu en permanence par l'équipe de l'IIIT-B et du NIMHANS Data Center, dirigée par Mme Sindhu M.G.",
+    blogTitle3:"Ordinateur/application mobile",
+    blogText3:"Le programme vous oblige à accéder à votre ordinateur de bureau/ordinateur portable/smartphone. Application mobile PUSH-D, la version Web est accessible via un ordinateur de bureau/ordinateur portable. Comme PUSH-D est un cours d'auto-assistance intensif et interactif, plusieurs utilisateurs préfèrent y accéder via la version Web.",
+    blogTitle4:"Section Progrès",
+    blogText4:"Ce sont des sections du programme ordonnées dans une séquence. Ce sont des sections généralement utiles pour les personnes présentant des symptômes dépressifs. En dehors de cela, il existe des sections facultatives que vous pouvez explorer à tout moment et utiliser en fonction de vos besoins/préoccupations.",
 }

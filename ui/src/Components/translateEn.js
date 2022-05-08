@@ -67,5 +67,13 @@ export const Translations_En = {
         "                                Keeping track of your feelings at periodic intervals helps us\n" +
         "                                and helps you to track your journey and also gauge if you need\n" +
         "                                some additional/different kind of support system.",
+    blogTitle1:"Why PUSH-D Developed?",
+    blogText1:"Depression is a common mental health concern which affects a large proportion of individuals at any given point of time. Depression can impact our functioning and quality of life even when the symptoms are mild in severity or too minimal to label it as clinical depression or a disorder.",
+    blogTitle2:"Technology Support",
+    blogText2:"PUSH-D was developed by a team of young scholars under the leadership of Professor T.K. Srikanth, E-Health Research Center,(IIIT-B), Bangalore. The program is supported on an ongoing basis by the team at IIIT-B and NIMHANS Data Center, led by Ms. Sindhu M.G.",
+    blogTitle3:"Computer/Mobile App",
+    blogText3:"The program requires you to access your desktop/laptop/smartphone.PUSH-D mobile app,the web-based version can be accessed via desktop/laptop. As PUSH-D is an intensive, interactive self-help course, several users prefer accessing it via the web-version.",
+    blogTitle4:"Progress Section",
+    blogText4:"These are sections of the program ordered in a sequence. These are sections typically helpful for individuals with depressive symptoms. Apart from this, there are some optional sections that you can explore at any point and use depending on your need/concerns..",
 
 }
