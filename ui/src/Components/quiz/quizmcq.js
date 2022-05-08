@@ -17,6 +17,7 @@ export default function Quizmcq() {
 
     let pid = parseInt(str);
 
+    const [sub_section_id,setSubsectionId] = useState(0);
     const [qid, setQid] = useState("");
     const [question, setQuestion] = useState("");
     const [questiona, setQuestiona] = useState("[]");
@@ -71,6 +72,22 @@ export default function Quizmcq() {
     const handleAnswerOptionClick = (answerText) => {
         console.log(answerText);
 
+        let obj = {
+            sectionId:"",
+            subsectionId:"",
+            qid:"",
+            patient:"",
+            response:"",
+        }
+
+        fetch("http://localhost:8084/addQuiz",{
+            method:"POST",
+            body:JSON.stringify(obj),
+            headers:{
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
 
         const nextQuestion = currentQuestion + 1;
         if (nextQuestion < questions.length) {

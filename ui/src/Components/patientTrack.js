@@ -37,18 +37,18 @@ function PatientTrack(){
     //     3:"Manage Excessive Worries",
     //     4:"Learn Self Compassion"
     // }
-    fetch("http://1d85-103-156-19-229.ngrok.io/patientDetails/23",{
-        method:"GET",
-    })
-        .then((response) => response.json())
-        .then((responseData)=>{
-              console.log(responseData);
-            document.getElementById("FirstName").value = responseData.username;
-            document.getElementById("LastName").value = responseData.username;
-            document.getElementById("Address").value = responseData.id;
-            document.getElementById("ContactNo").value = responseData.role;
-            document.getElementById("age").value = responseData.id;
-        })
+    // fetch("http://localhost:8084/patientDetails/23",{
+    //     method:"GET",
+    // })
+    //     .then((response) => response.json())
+    //     .then((responseData)=>{
+    //           console.log(responseData);
+    //         document.getElementById("FirstName").value = responseData.username;
+    //         document.getElementById("LastName").value = responseData.username;
+    //         document.getElementById("Address").value = responseData.id;
+    //         document.getElementById("ContactNo").value = responseData.role;
+    //         document.getElementById("age").value = responseData.id;
+    //     })
 
     // let lst = ["Understanding depression","Enhancing Self Care Motivation","Activate: Baby Steps to Move ahead","Manage Excessive Worries","Learn Self Compassion"];
     // while(j<chk.length){
@@ -121,6 +121,16 @@ function PatientTrack(){
         ///change this 23 to pid getting from url
     }
 
+    function seeAnalytics()
+    {
+        window.location.href = '/analytics?id=1';
+    }
+
+    function seeActivity()
+    {
+        // window.location.href = '/timeTrack';
+    }
+
     return <>
         <div>
             <div>
@@ -174,11 +184,14 @@ function PatientTrack(){
                         </div>
                         <div style={{marginTop:"15px",textAlign:"center"}}>
                             <div className="row">
-                                <div className="col-md-6">
-                                    <Link to="/analytics"><button type="button" id="editBtn" className="btn" style={{marginTop:"10px",backgroundColor:'#1bbd7e',color:"black"}}>Analytics</button></Link>
+                                <div className="col-md-4">
+                                    <button type="button" id="editBtn" className="btn" onClick={seeAnalytics} style={{marginTop:"10px",backgroundColor:'#1bbd7e',color:"black"}}>Analytics</button>
                                 </div>
-                                <div className="col-md-6">
+                                <div className="col-md-4">
                                     <button type="button" id="viewResBtn" className="btn"  style={{marginTop:"10px",backgroundColor:'coral',color:"black"}} onClick={seeResponse}>Responses</button>
+                                </div>
+                                <div className="col-md-4">
+                                    <button type="button" id="viewResBtn" className="btn" onClick={seeActivity} style={{marginTop:"10px",backgroundColor:'lightsteelblue',color:"black"}}>Activity</button>
                                 </div>
                             </div>
                         </div>
@@ -209,7 +222,7 @@ function PatientTrack(){
                 <div className="card-body" id="chat" style={{display:"none"}}>
                     <h5 className="card-title">Chat</h5>
                     <div style={{marginTop:"4px",textAlign:"center"}}>
-                        <Link to="/mainchat"><button type="button" id="editBtn" className="btn" style={{marginTop:"10px",backgroundColor:'#1bbd7e',color:"black"}}>Click to Chat</button></Link>
+                        <a href="https://sanphirefrontend.herokuapp.com" id="editBtn" className="btn" style={{marginTop:"10px",backgroundColor:'#1bbd7e',color:"black"}}>Click to Chat</a>
                     </div>
                 </div>
             </div>

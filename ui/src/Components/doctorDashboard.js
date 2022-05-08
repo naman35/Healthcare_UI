@@ -26,7 +26,7 @@ function DoctorDashboard(){
     function updLang(val){
         i18n.changeLanguage(val);
     }
-    fetch("http://1d85-103-156-19-229.ngrok.io/patientDetailsDoc/2",{
+    fetch("http://localhost:8084/patientDetailsDoc/2",{
         method:"GET",
     })
         .then((response) => response.json())
