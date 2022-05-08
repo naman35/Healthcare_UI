@@ -14,9 +14,9 @@ export default function Quizmcq() {
         str = str + pth[k];
         k++;
     }
-    console.log(str);
+
     let pid = parseInt(str);
-    console.log(pid);
+
     const [qid, setQid] = useState("");
     const [question, setQuestion] = useState("");
     const [questiona, setQuestiona] = useState("[]");
@@ -68,10 +68,9 @@ export default function Quizmcq() {
     const [showScore, setShowScore] = useState(false);
     const [score, setScore] = useState(0);
 
-    const handleAnswerOptionClick = (isCorrect) => {
-        if (isCorrect) {
-            setScore(score + 1);
-        }
+    const handleAnswerOptionClick = (answerText) => {
+        console.log(answerText);
+
 
         const nextQuestion = currentQuestion + 1;
         if (nextQuestion < questions.length) {
@@ -97,7 +96,7 @@ export default function Quizmcq() {
                     </div>
                     <div className='answer-section'>
                         {questions[currentQuestion].answerOptions.map((answerOption) => (
-                            <button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+                            <button onClick={() => handleAnswerOptionClick(answerOption.answerText)}>{answerOption.answerText}</button>
                         ))}
                     </div>
                 </>
