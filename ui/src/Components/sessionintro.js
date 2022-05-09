@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Avatar, Button, Grid, Paper, TextField} from "@material-ui/core";
 import {Navbar,Container,Nav} from "react-bootstrap";
 import {EmojiPeople} from "@material-ui/icons";
 import {Link} from "react-router-dom";
+import axios from "./axios";
+
 function Checkstatus1() {
     let flag=0;
     if(flag==0){
@@ -20,6 +22,7 @@ function Checkstatus1() {
 }
 function Checkstatus2() {
     let flag=0;
+    let html = '';
     if(flag==0){
         return( <Button href='/subsessionlist2'  style={{backgroundColor:'green',width:'408px' }} >Completed</Button>);
     }
@@ -78,59 +81,157 @@ function Checkstatus5() {
         return( <Button href='/subsessionlist5' style={{backgroundColor:'blue',width:'408px'  }} >No Server Response</Button>);
     }
 }
-function Checkstatusskippable() {
-    let flagg=0;
-    if(flagg==0){
-        return( <Button href='' style={{backgroundColor:'grey' }} >Required</Button>);
-    }
-    if(flagg==1){
-        return( <Button href='' style={{backgroundColor:'yellow' }} >Skippable</Button>);
-    }
-
-    else{
-        return( <Button href='' style={{backgroundColor:'blue' }} >No Server Response</Button>);
-    }}
-function Sub1() {
-    document.getElementById("subsection1").style.display="block";
-    document.getElementById("subsection2").style.display="none";
-    document.getElementById("subsection3").style.display="none";
-    document.getElementById("subsection4").style.display="none";
-    document.getElementById("subsection5").style.display="none";
-}
-function Sub2() {
-    document.getElementById("subsection1").style.display="none";
-    document.getElementById("subsection2").style.display="block";
-    document.getElementById("subsection3").style.display="none";
-    document.getElementById("subsection4").style.display="none";
-    document.getElementById("subsection5").style.display="none";
-}
-function Sub3() {
-    document.getElementById("subsection1").style.display="none";
-    document.getElementById("subsection2").style.display="none";
-    document.getElementById("subsection3").style.display="block";
-    document.getElementById("subsection4").style.display="none";
-    document.getElementById("subsection5").style.display="none";
-}
-function Sub4() {
-    document.getElementById("subsection1").style.display="none";
-    document.getElementById("subsection2").style.display="none";
-    document.getElementById("subsection3").style.display="none";
-    document.getElementById("subsection4").style.display="block";
-    document.getElementById("subsection5").style.display="none";
-}
-function Sub5() {
-    document.getElementById("subsection1").style.display="none";
-    document.getElementById("subsection2").style.display="none";
-    document.getElementById("subsection3").style.display="none";
-    document.getElementById("subsection4").style.display="none";
-    document.getElementById("subsection5").style.display="block";
-}
 
 function changePage(){
-    window.location.href = "http://localhost:3000/response";
+    window.location.href = "/response?id="+localStorage.getItem("id");
 }
 
 function Sessionintro() {
+
+    const [skippable1, setSkip1] = useState(0);
+    const [skippable2, setSkip2] = useState(0);
+    const [skippable3, setSkip3] = useState(0);
+    const [skippable4, setSkip4] = useState(0);
+    const [skippable5, setSkip5] = useState(0);
+
+    axios.get("http://localhost:8084/getSkippable/"+localStorage.getItem("id"),{
+    })
+        .then(function(res){
+            let val = res.data.toString();
+            let a = val.split("");
+            for(let i=0;i<a.length;i++)
+            {
+                if(a[i] == 0)
+                {
+                    setSkip1(1);
+                }
+                else if(a[i] == 1)
+                {
+                    setSkip2(1);
+                }
+                else if(a[i] == 2)
+                {
+                    setSkip3(1);
+                }
+                else if(a[i] == 3)
+                {
+                    setSkip4(1);
+                }
+                else if(a[i] == 4)
+                {
+                    setSkip5(1);
+                }
+            }
+        });
+
+    function Sub1() {
+        document.getElementById("subsection1").style.display="block";
+        document.getElementById("subsection2").style.display="none";
+        document.getElementById("subsection3").style.display="none";
+        document.getElementById("subsection4").style.display="none";
+        document.getElementById("subsection5").style.display="none";
+        return Checkstatusskippable1;
+    }
+    function Sub2() {
+        document.getElementById("subsection1").style.display="none";
+        document.getElementById("subsection2").style.display="block";
+        document.getElementById("subsection3").style.display="none";
+        document.getElementById("subsection4").style.display="none";
+        document.getElementById("subsection5").style.display="none";
+        return Checkstatusskippable2;
+    }
+    function Sub3() {
+        document.getElementById("subsection1").style.display="none";
+        document.getElementById("subsection2").style.display="none";
+        document.getElementById("subsection3").style.display="block";
+        document.getElementById("subsection4").style.display="none";
+        document.getElementById("subsection5").style.display="none";
+    }
+    function Sub4() {
+        document.getElementById("subsection1").style.display="none";
+        document.getElementById("subsection2").style.display="none";
+        document.getElementById("subsection3").style.display="none";
+        document.getElementById("subsection4").style.display="block";
+        document.getElementById("subsection5").style.display="none";
+    }
+    function Sub5() {
+        document.getElementById("subsection1").style.display="none";
+        document.getElementById("subsection2").style.display="none";
+        document.getElementById("subsection3").style.display="none";
+        document.getElementById("subsection4").style.display="none";
+        document.getElementById("subsection5").style.display="block";
+    }
+
+    function Checkstatusskippable1() {
+        if(skippable1==0){
+            return( <Button href='' style={{backgroundColor:'grey' }} >Required</Button>);
+        }
+        if(skippable1==1){
+            return( <Button href='' style={{backgroundColor:'yellow' }} >Skippable</Button>);
+        }
+
+        else{
+            return( <Button href='' style={{backgroundColor:'blue' }} >No Server Response</Button>);
+        }
+    }
+
+    function Checkstatusskippable2() {
+        if(skippable2==0){
+            return( <Button href='' style={{backgroundColor:'grey' }} >Required</Button>);
+        }
+        if(skippable2==1){
+            return( <Button href='' style={{backgroundColor:'yellow' }} >Skippable</Button>);
+        }
+
+        else{
+            return( <Button href='' style={{backgroundColor:'blue' }} >No Server Response</Button>);
+        }}
+
+
+    function Checkstatusskippable3() {
+        if(skippable3==0){
+            return( <Button href='' style={{backgroundColor:'grey' }} >Required</Button>);
+        }
+        if(skippable3==1){
+            return( <Button href='' style={{backgroundColor:'yellow' }} >Skippable</Button>);
+        }
+
+        else{
+            return( <Button href='' style={{backgroundColor:'blue' }} >No Server Response</Button>);
+        }}
+
+
+    function Checkstatusskippable4() {
+        if(skippable4==0){
+            return( <Button href='' style={{backgroundColor:'grey' }} >Required</Button>);
+        }
+        if(skippable4==1){
+            return( <Button href='' style={{backgroundColor:'yellow' }} >Skippable</Button>);
+        }
+
+        else{
+            return( <Button href='' style={{backgroundColor:'blue' }} >No Server Response</Button>);
+        }}
+
+    function Checkstatusskippable5() {
+        if(skippable5==0){
+            return( <Button href='' style={{backgroundColor:'grey' }} >Required</Button>);
+        }
+        if(skippable5==1){
+            return( <Button href='' style={{backgroundColor:'yellow' }} >Skippable</Button>);
+        }
+        else{
+            return( <Button href='' style={{backgroundColor:'blue' }} >No Server Response</Button>);
+        }
+    }
+
+
+
+
+
+
+
+
     const paperStyle={padding :20,height:'92vh',width:480, margin:"20px auto",opacity:0.8}
     const avatarStyle={backgroundColor:'#1bbd7e'}
     const btnstyle={margin:'8px 0'}
@@ -177,7 +278,9 @@ function Sessionintro() {
                     <Paper><Button id="overviewBtn3" type="button" onClick={Sub3}><b>Section-3:</b>Dealing with Depression</Button></Paper><br></br>
                     <Paper><Button id="overviewBtn4" type="button" onClick={Sub4}><b>Section-4:</b>Learn Self Help</Button></Paper><br></br>
                     <Paper><Button id="overviewBtn5" type="button" onClick={Sub5}><b>Section-5:</b>Strengthen your Feelings</Button></Paper><br></br>
-                    <Button onClick={changePage}>Click Me</Button>
+                    <br></br>
+                    <br></br>
+                    <button className="btn btn-primary" onClick={changePage}>View Your Responses</button>
                     <div className="card-body"  style={{display:"none",textAlign:"left"}} id="subsection1">
                         <div id="2">
 
@@ -185,7 +288,7 @@ function Sessionintro() {
 
                                 {/*<Button style={{backgroundColor:'green'}}>Complete</Button><Button style={{backgroundColor:'yellow'}}>Partially Completion</Button><Button style={{backgroundColor:'red'}}>Not Completed</Button>*/}
                             <Checkstatus1/>
-                            <Checkstatusskippable />
+                            <Checkstatusskippable1 />
 
 
                         </div></div>
@@ -194,7 +297,7 @@ function Sessionintro() {
 
                                 <p><strong>STATUS OF COMPLETION:</strong></p>
                                 <Checkstatus2/>
-                                <Checkstatusskippable />
+                                <Checkstatusskippable2 />
 
                                 {/*<Button style={{backgroundColor:'green'}}>Complete</Button><Button style={{backgroundColor:'yellow'}}>Partially Completion</Button><Button style={{backgroundColor:'red'}}>Not Completed</Button>*/}
 
@@ -206,7 +309,7 @@ function Sessionintro() {
                                     <p><strong>STATUS OF COMPLETION:</strong></p>
 
                                     <Checkstatus3/>
-                                    <Checkstatusskippable />
+                                    <Checkstatusskippable3 />
 
 
 
@@ -218,7 +321,7 @@ function Sessionintro() {
 
                                         {/*<Button style={{backgroundColor:'green'}}>Complete</Button><Button style={{backgroundColor:'yellow'}}>Partially Completion</Button><Button style={{backgroundColor:'red'}}>Not Completed</Button>*/}
                                         <Checkstatus4/>
-                                        <Checkstatusskippable />
+                                        <Checkstatusskippable4 />
 
 
                                     </div></div>
@@ -229,7 +332,7 @@ function Sessionintro() {
 
                                             {/*<Button style={{backgroundColor:'green'}}>Complete</Button><Button style={{backgroundColor:'yellow'}}>Partially Completion</Button><Button style={{backgroundColor:'red'}}>Not Completed</Button>*/}
                                             <Checkstatus5/>
-                                            <Checkstatusskippable />
+                                            <Checkstatusskippable5 />
 
                                         </div></div>
 

@@ -123,7 +123,6 @@ function PatientTrack(){
             .then((response) => response.json())
             .then((responseData)=>{
                 console.log(responseData);
-                document.getElementById("responseList").innerHTML='';
             });
     }
 
