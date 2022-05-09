@@ -234,6 +234,7 @@ function Sessionintro() {
             return( <Button href='' style={{backgroundColor:'grey' }} >Required</Button>);
         }
         if(skippable1==1){
+            setcount2(true)
             return( <Button href='' style={{backgroundColor:'yellow' }} >Skippable</Button>);
         }
 
@@ -247,6 +248,7 @@ function Sessionintro() {
             return( <Button href='' style={{backgroundColor:'grey' }} >Required</Button>);
         }
         if(skippable2==1){
+            setcount3(true)
             return( <Button href='' style={{backgroundColor:'yellow' }} >Skippable</Button>);
         }
 
@@ -260,6 +262,7 @@ function Sessionintro() {
             return( <Button href='' style={{backgroundColor:'grey' }} >Required</Button>);
         }
         if(skippable3==1){
+            setcount4(true)
             return( <Button href='' style={{backgroundColor:'yellow' }} >Skippable</Button>);
         }
 
@@ -273,6 +276,7 @@ function Sessionintro() {
             return( <Button href='' style={{backgroundColor:'grey' }} >Required</Button>);
         }
         if(skippable4==1){
+            setcount5(true)
             return( <Button href='' style={{backgroundColor:'yellow' }} >Skippable</Button>);
         }
 
