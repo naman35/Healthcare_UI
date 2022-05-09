@@ -50,7 +50,7 @@ function Sessionlist1() {
                     <br/><Paper><Button href="/quizmcq?id=1" id="overviewBtn" type="button" ><b>Sub-Section-1:</b>Knowledge Point</Button></Paper><br></br>
                     <Paper><Button href="/quizfillup?id=1" id="overviewBtn2" type="button" ><b>Sub-Section-2:</b>Tool Box</Button></Paper><br></br>
                     <Paper><Button href="/quizmcq?id=1" type="button" ><b>Sub-Section-3:</b>Never Have I Ever</Button></Paper><br></br>
-                    <Paper><Button href="http://localhost:3002/" type="button" ><b>Sub-Section-4:</b>Chill Time(Optional)</Button></Paper><br></br>
+                    <Paper><Button href="https://tic-tac-toe-woad-nu.vercel.app/" target="_blank" type="button" ><b>Sub-Section-4:</b>Chill Time(Optional)</Button></Paper><br></br>
                     {/*<Typography >*/}
                     {/*    <Link href="#" >*/}
                     {/*        Forgot password ?*/}

@@ -1,129 +1,390 @@
-import {Navbar,Container,Nav} from "react-bootstrap"
-function PreRegister(){
+// import React,{ useState } from 'react';
+// import { Grid, Paper } from "@material-ui/core";
+// import { RatingComponent } from 'react-rating-emoji'
+// import Button from 'react-bootstrap/Button'
+// import TextField from '@material-ui/core/TextField';
+// import Autocomplete from '@material-ui/lab/Autocomplete';
+// import Checkbox from '@material-ui/core/Checkbox';
+// import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
+// import CheckBoxIcon from '@material-ui/icons/CheckBox';
+// import 'react-rating-emoji/dist/index.css'
+// import {Container, Nav, Navbar} from "react-bootstrap";
+//
+// const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
+// const checkedIcon = <CheckBoxIcon fontSize="small" />;
+//
+// const Forms=()=> {
+//     const [inputs, setInputs] = useState({});
+//
+//     const [textarea, setTextarea] = useState();
+//
+//     const [rating, setRating] = useState(0);
+//
+//     const options = ['Monday', 'Tuesday', 'Thursday',
+//         'Friday', 'Saturday', 'Sunday']
+//
+//     const handleRating = (newRating) => {
+//         setRating(newRating);
+//     }
+//
+//
+//     const handleChange1 = (event) => {
+//         setTextarea(event.target.value)
+//     }
+//
+//     const handleChange = (event) => {
+//         const name = event.target.name;
+//         const value = event.target.value;
+//         setInputs(values => ({...values, [name]: value}))
+//     }
+//
+//     const handleSubmit = (event) => {
+//         event.preventDefault();
+//         alert(inputs);
+//     }
+//     const paperStyle = {
+//         padding: 20,
+//         height: "140vh",
+//         width: 1400,
+//         margin: "50px 50px",
+//     };
+//
+//     return (<div style={{backgroundImage:"url('https://images.unsplash.com/photo-1520962880247-cfaf541c8724?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVhY2V8ZW58MHx8MHx8&w=1000&q=80')" ,backgroundSize: 'cover',
+//         backgroundRepeat: 'no-repeat'}}>
+//         <Navbar bg="light" variant="light" style={{opacity:0.8}} >
+//             <Container >
+//                 <Navbar.Brand href="landingpage">
+//                     Push-D
+//                 </Navbar.Brand>
+//                 <Nav className="me-auto" >
+//
+//                     <Button href="login" variant="outline-success" style={{border:0}} >Login</Button>
+//                     <Button href="signup" variant="outline-success" style={{border:0}}>Signup</Button>
+//                     <Button href="About" variant="outline-success" style={{border:0}}>About</Button>
+//                     <Button href="login" variant="outline-success" style={{border:0}}>ContactUs</Button>
+//                     <div className="btn-group">
+//                         <button type="button" className="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+//                             Translate
+//                         </button>
+//                         <ul className="dropdown-menu">
+//                             <li><a className="dropdown-item" href="#" >English</a></li>
+//                             <li><a className="dropdown-item" href="#" >French</a></li>
+//                             <li><a className="dropdown-item" href="#" >Hindi</a></li>
+//                         </ul>
+//                     </div>
+//                 </Nav>
+//             </Container>
+//         </Navbar>
+//         <div style={{opacity:0.8}}>
+//             <Paper elevation={7} style={paperStyle}>
+//                 <Grid>
+//                     <h1><strong>Registration form</strong></h1>
+//                     <form onSubmit={handleSubmit}>
+//                         <label><h5> Enter your name</h5></label>
+//                         <br/>
+//                         <input
+//                             type="text"
+//                             name="username"
+//                             value={inputs.username || ""}
+//                             onChange={handleChange}
+//                         />
+//
+//                         <br/>
+//                         <br/>
+//                         <label><h5>Enter your age:</h5></label>
+//                         <br/>
+//                         <input
+//                             type="number"
+//                             name="age"
+//                             value={inputs.age || ""}
+//                             onChange={handleChange}
+//                         />
+//
+//                         <br/>
+//                         <br/>
+//                         <label><h5>How you are feeling today:</h5></label>
+//                         <br/>
+//                         <textarea value={textarea} onChange={handleChange1} />
+//
+//                         <br/>
+//                         <div className="radio">
+//                             <label><h5>How you are feeling today:</h5></label>
+//                             <br/>
+//                             <label>
+//                                 <input type="radio" value="option1"  />
+//                                 Option 1
+//                             </label>
+//                         </div>
+//                         <div className="radio">
+//
+//                             <label>
+//                                 <input type="radio" value="option2" />
+//                                 Option 2
+//                             </label>
+//                         </div>
+//                         <div className="radio">
+//                             <label>
+//                                 <input type="radio" value="option3" />
+//                                 Option 3
+//                             </label>
+//                         </div>
+//                         <br/>
+//
+//
+//                         <strong><h4>Rate Your mood</h4></strong>
+//                         <RatingComponent rating={rating} onClick={handleRating} style={{alignText:'center'}}/>
+//                         <br/>
+//
+//
+//                         <h5>How you are feeling today:</h5>
+//
+//                         <label>
+//                             <input type="radio" value="option1" />
+//                             Option 1
+//                         </label>
+//                         <label>
+//                             <input type="radio" value="option1" />
+//                             Option 1
+//                         </label>
+//
+//
+//                         <br/>
+//                         <br/>
+//                         <label><h5>Select your choice</h5></label>
+//                         <select defaultValue="Choose...">
+//                             <option>Choose...</option>
+//                             <option>choose1</option>
+//                             <option>choose2</option>
+//                             <option>choose3</option>
+//                         </select>
+//                         <br/>
+//                         <br/>
+//                         <h5>Choose your fav day</h5>
+//                         <Autocomplete
+//                             multiple
+//                             id="checkboxes-tags-demo"
+//                             options={options}
+//                             renderOption={(option, { selected }) => (
+//                                 <React.Fragment>
+//                                     <Checkbox
+//                                         icon={icon}
+//                                         checkedIcon={checkedIcon}
+//                                         style={{ marginRight: 8 }}
+//                                         checked={selected}
+//                                     />
+//                                     {option}
+//                                 </React.Fragment>
+//                             )}
+//                             style={{ width: 400 }}
+//                             renderInput={(params) => (
+//                                 <TextField {...params} variant="outlined"
+//                                            label="Checkboxes"
+//                                            placeholder="Favorites" />
+//                             )}
+//                         />
+//                         <br/>
+//                         <br/>
+//                         <Button href='/login' variant="success">Success</Button>
+//                         {/* <input type="submit" /> */}
+//                     </form>
+//                 </Grid>
+//             </Paper>
+//         </div>
+//         </div>
+//     )
+// }
+// export default Forms;
 
-    // fetch("http://a6b5-103-156-19-229.ngrok.io/getDetails",{
-    //     method:"GET",
-    // })
-    //     .then((response) => response.json())
-    //     .then((responseData)=>{
-    //         document.getElementById("firstName").value = responseData[0].username;
-    //         document.getElementById("lastName").value = responseData[0].username;
-    //         document.getElementById("address").value = responseData[0].id;
-    //         document.getElementById("contactNo").value = responseData[0].role;
-    //         document.getElementById("age").value = responseData[0].id;
-    //     })
-    function saveInfo(){
-        let first = document.getElementById("firstName").value
-        let last = document.getElementById("lastName").value
-        let addr = document.getElementById("address").value
-        let contact = document.getElementById("contactNo").value
-        let age = document.getElementById("age").value
-        let person = {
-            firstName:first,
-            lastName:last,
-            address:addr,
-            contactNo:contact,
-            age:age
-        }
-        document.getElementById("firstName").disabled=true;
-        document.getElementById("lastName").disabled=true;
-        document.getElementById("address").disabled=true;
-        document.getElementById("contactNo").disabled=true;
-        document.getElementById("age").disabled=true;
-        document.getElementById("editBtn").style.display="block";
-        document.getElementById("saveBtn").style.display="none";
-    }
-    function editInfo(){
-        document.getElementById("firstName").disabled=false;
-        document.getElementById("lastName").disabled=false;
-        document.getElementById("address").disabled=false;
-        document.getElementById("contactNo").disabled=false;
-        document.getElementById("age").disabled=false;
-        document.getElementById("editBtn").style.display="none";
-        document.getElementById("saveBtn").style.display="block";
-    }
-    function markAnswer(data){
-        document.getElementById(data).style.backgroundColor="lightgreen";
-    }
-    return <>
-        <div>
-            <div>
-                <nav className="navbar" style={{backgroundColor:"gainsboro"}}>
-                    <div className="container-fluid">
-                <span className="navbar-text">
-                Push-D Logo
-                </span>
-                        <span>
-                    <button id-type="button" className="btn btn-success" style={{marginTop:"10px",backgroundColor:"white",color:"black"}}>Logout</button>
-                </span>
-                    </div>
-                </nav>
-            </div>
-            <div className="card p-3 shadow mb-5 bg-white rounded" style={{margin:"20px",backgroundColor:"white"}}>
-                <div className="card-body">
-                    <div >
-                        <div className="row" style={{marginBottom:"5px"}}>
-                            A good mood is solution for all your problems. What about your mood today?
-                        </div>
-                        {/*<div>*/}
-                        {/*    <ul className="list-group list-group-horizontal">*/}
-                        {/*        <li className="list-group-item"><button>An item</button></li>*/}
-                        {/*        <li className="list-group-item">A second item</li>*/}
-                        {/*        <li className="list-group-item">A third item</li>*/}
-                        {/*    </ul>*/}
-                        {/*</div>*/}
-                        <div className="row" id="patientsList">
-                            <ul className="list-group list-group-horizontal">
-                            <button type="button" id="btn1" onClick={()=>markAnswer("btn1")} className="optBtn list-group-item list-group-item-action" style={{width:"80px",backgroundColor:"coral"}}>
-                                Bad
-                            </button>
-                            <button type="button" id="btn2" onClick={()=>markAnswer("btn2")} className="optBtn list-group-item list-group-item-action" style={{width:"80px",backgroundColor:"coral"}}>okay</button>
-                            <button type="button" id="btn3" onClick={()=>markAnswer("btn3")} className="optBtn list-group-item list-group-item-action" style={{width:"80px",backgroundColor:"coral"}}>happy
-                            </button>
-                            <button type="button" id="btn4" onClick={()=>markAnswer("btn4")} className="optBtn list-group-item list-group-item-action" style={{width:"80px",backgroundColor:"coral"}}>jolly
-                            </button></ul>
-                        </div>
-                        <div className="row" style={{marginBottom:"5px"}}>
-                            Negative thoughts ruins everything.  Do you frequently get such thoughts?
-                        </div>
-                        {/*<div>*/}
-                        {/*    <ul className="list-group list-group-horizontal">*/}
-                        {/*        <li className="list-group-item"><button>An item</button></li>*/}
-                        {/*        <li className="list-group-item">A second item</li>*/}
-                        {/*        <li className="list-group-item">A third item</li>*/}
-                        {/*    </ul>*/}
-                        {/*</div>*/}
-                        <div className="row" id="patientsList">
-                            <ul className="list-group list-group-horizontal">
-                                <button type="button" id="btn1" onClick={()=>markAnswer("btn1")} className="optBtn list-group-item list-group-item-action" style={{width:"80px",backgroundColor:"coral"}}>
-                                    Bad
-                                </button>
-                                <button type="button" id="btn2" onClick={()=>markAnswer("btn2")} className="optBtn list-group-item list-group-item-action" style={{width:"80px",backgroundColor:"coral"}}>okay</button>
-                                <button type="button" id="btn3" onClick={()=>markAnswer("btn3")} className="optBtn list-group-item list-group-item-action" style={{width:"80px",backgroundColor:"coral"}}>happy
-                                </button>
-                                <button type="button" id="btn4" onClick={()=>markAnswer("btn4")} className="optBtn list-group-item list-group-item-action" style={{width:"80px",backgroundColor:"coral"}}>jolly
-                                </button></ul>
-                        </div>
-                        <div className="row" style={{marginBottom:"5px"}}>
-                            Sharing your problems with someone helps you to overcome them. Let us know what's the issue you are facing?
-                        </div>
-                        <div className="row" id="patientsList">
-                            <ul className="list-group list-group-horizontal">
-                                <button type="button" id="btn1" onClick={()=>markAnswer("btn1")} className="optBtn list-group-item list-group-item-action" style={{width:"80px",backgroundColor:"coral"}}>
-                                    Bad
-                                </button>
-                                <button type="button" id="btn2" onClick={()=>markAnswer("btn2")} className="optBtn list-group-item list-group-item-action" style={{width:"80px",backgroundColor:"coral"}}>okay</button>
-                                <button type="button" id="btn3" onClick={()=>markAnswer("btn3")} className="optBtn list-group-item list-group-item-action" style={{width:"80px",backgroundColor:"coral"}}>happy
-                                </button>
-                                <button type="button" id="btn4" onClick={()=>markAnswer("btn4")} className="optBtn list-group-item list-group-item-action" style={{width:"80px",backgroundColor:"coral"}}>jolly
-                                </button></ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+import React,{useState} from 'react'
+import Autocomplete from '@material-ui/lab/Autocomplete';
+// import 'react-rating-emoji/dist/index.css';
+import { Grid,Paper, Avatar, TextField, Button, Typography} from '@material-ui/core';
+import { RatingComponent } from 'react-rating-emoji';
+import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
+import CheckBoxIcon from '@material-ui/icons/CheckBox';
+import {Link} from 'react-router-dom';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import {Navbar,Container,Nav} from "react-bootstrap";
+import Dashboard from "./dashboard";
+import axios from "axios";
+const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
+const checkedIcon = <CheckBoxIcon fontSize="small" />;
+const Forms=()=>{
+    const [inputs, setInputs] = useState({});
+    const [textarea, setTextarea] = useState();
 
-    </>
+    const [rating, setRating] = useState(0);
+
+    const options = ['Monday', 'Tuesday', 'Thursday',
+        'Friday', 'Saturday', 'Sunday']
+
+    const handleRating = (newRating) => {
+        setRating(newRating);
+    }
+
+
+    const handleChange1 = (event) => {
+        setTextarea(event.target.value)
+    }
+
+    const handleChange = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        setInputs(values => ({...values, [name]: value}))
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        alert(inputs);
+    }
+
+
+
+
+    const paperStyle={padding :20,height:'140vh',width:400, margin:"20px auto"}
+    const avatarStyle={backgroundColor:'#1bbd7e'}
+    const btnstyle={margin:'8px 0'}
+    return(<>
+            <div style={{backgroundImage:"url('https://wallpaperaccess.com/full/3910193.jpg')" ,backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat'}}>
+                <Navbar bg="light" variant="light" style={{opacity:0.8}} >
+                    <Container >
+                        <Navbar.Brand href="landingpage">
+                            Push-D
+                        </Navbar.Brand>
+                        <Nav className="me-auto" >
+
+                            <Button href="login" variant="outline-success" style={{border:0}} >Login</Button>
+                            <Button href="signup" variant="outline-success" style={{border:0}}>Signup</Button>
+                            <Button href="About" variant="outline-success" style={{border:0}}>About</Button>
+                            <Button href="login" variant="outline-success" style={{border:0}}>ContactUs</Button>
+                            <Button href="landingpage" variant="outline-success" style={{border:0}}>Back</Button>
+                            <div className="btn-group">
+                                <button type="button" className="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Translate
+                                </button>
+                                <ul className="dropdown-menu">
+                                    <li><a className="dropdown-item" href="#" >English</a></li>
+                                    <li><a className="dropdown-item" href="#" >French</a></li>
+                                    <li><a className="dropdown-item" href="#" >Hindi</a></li>
+                                </ul>
+                            </div>
+                        </Nav>
+                    </Container>
+                </Navbar>
+                <div style={{opacity:0.8}}>
+                              <Paper elevation={7} style={paperStyle}>
+                                  <Grid>
+                                      <h1><strong>Registration form</strong></h1>
+                                      <form onSubmit={handleSubmit}>
+                                           <label><h5> Enter your name</h5></label>
+                                          <br/>
+                                            <input
+                                                type="text"
+                                                name="username"
+                                                value={inputs.username || ""}
+                                                onChange={handleChange}
+                                            />
+
+                                            <br/>
+                                            <br/>
+                                            <label><h5>Enter your age:</h5></label>
+                                            <br/>
+                                            <input
+                                                type="number"
+                                                name="age"
+                                                value={inputs.age || ""}
+                                                onChange={handleChange}
+                                            />
+
+                                            <br/>
+                                            <br/>
+                                            <label><h5>How you are feeling today:</h5></label>
+                                            <br/>
+                                            <textarea value={textarea} onChange={handleChange1} />
+
+                                            <br/>
+                                            <div className="radio">
+                                                <label><h5>How you are feeling today:</h5></label>
+                                                <br/>
+                                                <label>
+                                                    <input type="radio" value="option1"  />
+                                                    Option 1
+                                                </label>
+                                            </div>
+                                            <div className="radio">
+
+                                                <label>
+                                                    <input type="radio" value="option2" />
+                                                    Option 2
+                                                </label>
+                                            </div>
+                                            <div className="radio">
+                                                <label>
+                                                    <input type="radio" value="option3" />
+                                                    Option 3
+                                                </label>
+                                            </div>
+                                            <br/>
+                                            <h5>How you are feeling today:</h5>
+
+                                            <label>
+                                                <input type="radio" value="option1" />
+                                                Option 1
+                                            </label>
+                                            <label>
+                                                <input type="radio" value="option1" />
+                                                Option 1
+                                            </label>
+
+
+                                            <br/>
+                                            <br/>
+                                            <label><h5>Select your choice</h5></label>
+                                            <select defaultValue="Choose...">
+                                                <option>Choose...</option>
+                                                <option>choose1</option>
+                                                <option>choose2</option>
+                                                <option>choose3</option>
+                                            </select>
+                                            <br/>
+                                            <br/>
+                                            <h5>Choose your fav day</h5>
+                                            <Autocomplete
+                                                multiple
+                                                id="checkboxes-tags-demo"
+                                                options={options}
+                                                renderOption={(option, { selected }) => (
+                                                    <React.Fragment>
+                                                        <Checkbox
+                                                            icon={icon}
+                                                            checkedIcon={checkedIcon}
+                                                            style={{ marginRight: 8 }}
+                                                            checked={selected}
+                                                        />
+                                                        {option}
+                                                    </React.Fragment>
+                                                )}
+                                                style={{ width: 400 }}
+                                                renderInput={(params) => (
+                                                    <TextField {...params} variant="outlined"
+                                                               label="Checkboxes"
+                                                               placeholder="Favorites" />
+                                                )}
+                                            />
+                                            <br/>
+                                            <br/>
+                                            <Button href='/login' variant="success">Success</Button>
+                                            {/* <input type="submit" /> */}
+                                        </form>
+                                    </Grid>
+                                </Paper>
+                            </div>
+
+            </div></>
+    )
 }
 
-export default PreRegister;
+export default Forms

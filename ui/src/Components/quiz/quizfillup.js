@@ -22,6 +22,7 @@ export default function Quizfillup() {
         {
             questionText: question1,
 
+
         },
         {
             questionText: question2
@@ -61,7 +62,7 @@ export default function Quizfillup() {
                             </div>
                             {questions[currentQuestion].questionText}
 
-                            <TextField type='text'/>
+                            <TextField type='text' />
                             <Button onClick={handleAnswerOptionClick} type='button'>Ok!Next Question</Button>
                         </div>
 

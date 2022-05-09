@@ -238,7 +238,7 @@ function PatientTrack(){
                 <div className="card-body" id="chat" style={{display:"none"}}>
                     <h5 className="card-title">Chat</h5>
                     <div style={{marginTop:"4px",textAlign:"center"}}>
-                        <a href="https://sanphirefrontend.herokuapp.com" id="editBtn" className="btn" style={{marginTop:"10px",backgroundColor:'#1bbd7e',color:"black"}}>Click to Chat</a>
+                        <a href="https://sanphirefrontend.herokuapp.com" target="_blank" id="editBtn" className="btn" style={{marginTop:"10px",backgroundColor:'#1bbd7e',color:"black"}}>Click to Chat</a>
                     </div>
                 </div>
             </div>

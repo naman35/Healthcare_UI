@@ -5,89 +5,24 @@ import {EmojiPeople} from "@material-ui/icons";
 import {Link} from "react-router-dom";
 import axios from "./axios";
 
-function Checkstatus1() {
-    let flag=0;
-    if(flag==0){
-        return( <Button href='/subsessionlist1'  style={{backgroundColor:'green',width:'408px' }} >Completed</Button>);
-    }
-    if(flag==1){
-        return( <Button href='/subsessionlist1' style={{backgroundColor:'yellow',width:'408px'  }} >Partially Complete</Button>);
-    }
-    if(flag==2){
-        return( <Button href='/subsessionlist1' style={{backgroundColor:'red',width:'408px'  }} >Not Completed</Button>);
-    }
-    else{
-        return( <Button href='/subsessionlist1' style={{backgroundColor:'blue',width:'408px'  }} >No Server Response</Button>);
-    }
-}
-function Checkstatus2() {
-    let flag=0;
-    let html = '';
-    if(flag==0){
-        return( <Button href='/subsessionlist2'  style={{backgroundColor:'green',width:'408px' }} >Completed</Button>);
-    }
-    if(flag==1){
-        return( <Button href='/subsessionlist2' style={{backgroundColor:'yellow',width:'408px'  }} >Partially Complete</Button>);
-    }
-    if(flag==2){
-        return( <Button href='/subsessionlist2' style={{backgroundColor:'red',width:'408px'  }} >Not Completed</Button>);
-    }
-    else{
-        return( <Button href='/subsessionlist2' style={{backgroundColor:'blue',width:'408px'  }} >No Server Response</Button>);
-    }
-}
-function Checkstatus3() {
-    let flag=0;
-    if(flag==0){
-        return( <Button href='/subsessionlist3'  style={{backgroundColor:'green',width:'408px' }} >Completed</Button>);
-    }
-    if(flag==1){
-        return( <Button href='/subsessionlist3' style={{backgroundColor:'yellow',width:'408px'  }} >Partially Complete</Button>);
-    }
-    if(flag==2){
-        return( <Button href='/subsessionlist3' style={{backgroundColor:'red',width:'408px'  }} >Not Completed</Button>);
-    }
-    else{
-        return( <Button href='/subsessionlist3' style={{backgroundColor:'blue',width:'408px'  }} >No Server Response</Button>);
-    }
-}
-function Checkstatus4() {
-    let flag=0;
-    if(flag==0){
-        return( <Button href='/subsessionlist4'  style={{backgroundColor:'green',width:'408px' }} >Completed</Button>);
-    }
-    if(flag==1){
-        return( <Button href='/subsessionlist4' style={{backgroundColor:'yellow',width:'408px'  }} >Partially Complete</Button>);
-    }
-    if(flag==2){
-        return( <Button href='/subsessionlist4' style={{backgroundColor:'red',width:'408px'  }} >Not Completed</Button>);
-    }
-    else{
-        return( <Button href='/subsessionlist4' style={{backgroundColor:'blue',width:'408px'  }} >No Server Response</Button>);
-    }
-}
-function Checkstatus5() {
-    let flag=0;
-    if(flag==0){
-        return( <Button href='/subsessionlist5'  style={{backgroundColor:'green',width:'408px' }} >Completed</Button>);
-    }
-    if(flag==1){
-        return( <Button href='/subsessionlist5' style={{backgroundColor:'yellow',width:'408px'  }} >Partially Complete</Button>);
-    }
-    if(flag==2){
-        return( <Button href='/subsessionlist5' style={{backgroundColor:'red',width:'408px'  }} >Not Completed</Button>);
-    }
-    else{
-        return( <Button href='/subsessionlist5' style={{backgroundColor:'blue',width:'408px'  }} >No Server Response</Button>);
-    }
-}
 
 function changePage(){
     window.location.href = "/response?id="+localStorage.getItem("id");
 }
 
-function Sessionintro() {
 
+
+
+
+
+
+
+
+
+
+
+
+function Sessionintro() {
     const [skippable1, setSkip1] = useState(0);
     const [skippable2, setSkip2] = useState(0);
     const [skippable3, setSkip3] = useState(0);
@@ -122,7 +57,132 @@ function Sessionintro() {
                     setSkip5(1);
                 }
             }
-        });
+        }
+        );
+
+    const [count1, setcount1] = useState(true);
+    const [count2, setcount2] = useState(false);
+    const [count3, setcount3] = useState(false);
+    const [count4, setcount4] = useState(false);
+    const [count5, setcount5] = useState(false);
+
+    const [qi5, setQi5] = useState("");
+    const [qi1, setQi1] = useState("");
+    const [qi2, setQi2] = useState("");
+    const [qi3, setQi3] = useState("");
+    const [qi4, setQi4] = useState("");
+    function Checkstatus1() {
+
+        axios.get(`http://localhost:8084/completed/${localStorage.getItem('id')}/1`)
+            .then(response => {
+                setQi1(response.data);
+                console.log(qi1)
+            });
+
+
+        if(qi1>=6){
+            setcount2(true)
+
+            return( <Button href='/subsessionlist1'  style={{backgroundColor:'green',width:'408px' }} >Completed-Click Here for Enter</Button>);
+        }
+        if(qi1>0 && qi1<6){
+            return( <Button href='/subsessionlist1' style={{backgroundColor:'yellow',width:'408px'  }} >Partially Complete-Click Here for Enter</Button>);
+        }
+        if(qi1==0){
+            return( <Button href='/subsessionlist1' style={{backgroundColor:'red',width:'408px'  }} >Not Completed-Click Here for Enter</Button>);
+        }
+        else{
+            return( <Button href='/subsessionlist1' style={{backgroundColor:'blue',width:'408px'  }} >No Server Response</Button>);
+        }
+    }
+    function Checkstatus2() {
+
+        axios.get(`http://localhost:8084/completed/${localStorage.getItem('id')}/2`)
+            .then(response => {
+                setQi2(response.data);
+            });
+
+
+        if(qi2>=6){
+            setcount3(true)
+            return( <Button href='/subsessionlist2'  style={{backgroundColor:'green',width:'408px' }} >Completed-Click Here for Enter</Button>);
+        }
+        if(qi2>0 && qi2<6){
+            return( <Button href='/subsessionlist2' style={{backgroundColor:'yellow',width:'408px'  }} >Partially Complete-Click Here for Enter</Button>);
+        }
+        if(qi2==0){
+            return( <Button href='/subsessionlist2' style={{backgroundColor:'red',width:'408px'  }} >Not Completed-Click Here for Enter</Button>);
+        }
+        else{
+            return( <Button href='/subsessionlist2' style={{backgroundColor:'blue',width:'408px'  }} >No Server Response</Button>);
+        }
+    }
+    function Checkstatus3() {
+
+        axios.get('http://localhost:8084/completed/24/3')
+            .then(response => {
+                setQi3(response.data);
+            });
+
+
+        if(qi3>=6){
+            setcount4(true);
+            return( <Button href='/subsessionlist3'  style={{backgroundColor:'green',width:'408px' }} >Completed-Click Here for Enter</Button>);
+        }
+        if(qi3>0 && qi3<6){
+            return( <Button href='/subsessionlist3' style={{backgroundColor:'yellow',width:'408px'  }} >Partially Complete-Click Here for Enter</Button>);
+        }
+        if(qi3==0){
+            return( <Button href='/subsessionlist3' style={{backgroundColor:'red',width:'408px'  }} >Not Completed-Click Here for Enter</Button>);
+        }
+        else{
+            return( <Button href='/subsessionlist3' style={{backgroundColor:'blue',width:'408px'  }} >No Server Response</Button>);
+        }
+    }
+    function Checkstatus4() {
+
+        axios.get('http://localhost:8084/completed/24/4')
+            .then(response => {
+                setQi4(response.data);
+            });
+
+
+        if(qi4>=6){
+            setcount5(true);
+            return( <Button href='/subsessionlist4'  style={{backgroundColor:'green',width:'408px' }} >Completed-Click Here for Enter</Button>);
+        }
+        if(qi4>0 && qi4<6){
+            return( <Button href='/subsessionlist4' style={{backgroundColor:'yellow',width:'408px'  }} >Partially Complete-Click Here for Enter</Button>);
+        }
+        if(qi4==0){
+            return( <Button href='/subsessionlist4' style={{backgroundColor:'red',width:'408px'  }} >Not Completed-Click Here for Enter</Button>);
+        }
+        else{
+            return( <Button href='/subsessionlist4' style={{backgroundColor:'blue',width:'408px'  }} >No Server Response</Button>);
+        }
+    }
+    function Checkstatus5() {
+
+        axios.get('http://localhost:8084/completed/24/5')
+            .then(response => {
+                setQi5(response.data);
+            });
+
+
+        if(qi5>=6){
+            return( <Button href='/subsessionlist5'  style={{backgroundColor:'green',width:'408px' }} >Completed-Click Here for Enter</Button>);
+        }
+        if(qi5>0 && qi5<6){
+            return( <Button href='/subsessionlist5' style={{backgroundColor:'yellow',width:'408px'  }} >Partially Complete-Click Here for Enter</Button>);
+        }
+        if(qi5==0){
+            return( <Button href='/subsessionlist5' style={{backgroundColor:'red',width:'408px'  }} >Not Completed-Click Here for Enter</Button>);
+        }
+        else{
+            return( <Button href='/subsessionlist5' style={{backgroundColor:'blue',width:'408px'  }} >No Server Response</Button>);
+        }
+    }
+
 
     function Sub1() {
         document.getElementById("subsection1").style.display="block";
@@ -273,13 +333,11 @@ function Sessionintro() {
                     </Grid>
 
 <Paper style={{backgroundColor:'#d7e367'}}>Sometimes it's not enough to kow what things mean;sometimes you have to know what things dont't mean.-<i>Bob Dylan</i></Paper>
-                    <br/><Paper><Button id="overviewBtn" type="button" onClick={Sub1}><b>Section-1:</b>Understanding The Problem</Button></Paper><br></br>
-                    <Paper><Button id="overviewBtn2" type="button" onClick={Sub2}><b>Section-2:</b>Enhance Your Capability</Button></Paper><br></br>
-                    <Paper><Button id="overviewBtn3" type="button" onClick={Sub3}><b>Section-3:</b>Dealing with Depression</Button></Paper><br></br>
-                    <Paper><Button id="overviewBtn4" type="button" onClick={Sub4}><b>Section-4:</b>Learn Self Help</Button></Paper><br></br>
-                    <Paper><Button id="overviewBtn5" type="button" onClick={Sub5}><b>Section-5:</b>Strengthen your Feelings</Button></Paper><br></br>
-                    <br></br>
-                    <br></br>
+                    <br/><Paper><Button id="overviewBtn" type="button" onClick={Sub1} disabled={!count1} ><b>Section-1:</b>Understanding The Problem</Button></Paper><br></br>
+                    <Paper><Button id="overviewBtn2" type="button" onClick={Sub2} disabled={!count2}><b>Section-2:</b>Enhance Your Capability</Button></Paper><br></br>
+                    <Paper><Button id="overviewBtn3" type="button" onClick={Sub3} disabled={!count3}><b>Section-3:</b>Dealing with Depression</Button></Paper><br></br>
+                    <Paper><Button id="overviewBtn4" type="button" onClick={Sub4} disabled={!count4}><b>Section-4:</b>Learn Self Help</Button></Paper><br></br>
+                    <Paper><Button id="overviewBtn5" type="button" onClick={Sub5} disabled={!count5}><b>Section-5:</b>Strengthen your Feelings</Button></Paper><br></br>
                     <button className="btn btn-primary" onClick={changePage}>View Your Responses</button>
                     <div className="card-body"  style={{display:"none",textAlign:"left"}} id="subsection1">
                         <div id="2">
@@ -355,4 +413,4 @@ function Sessionintro() {
     )
 }
 
-export default Sessionintro
+export default Sessionintro;
