@@ -22,6 +22,10 @@ function changePage(){
 
 
 
+function viewAnalytics(){
+    window.location.href = "/analytics?id="+localStorage.getItem("id");
+}
+
 function Sessionintro() {
     const [skippable1, setSkip1] = useState(0);
     const [skippable2, setSkip2] = useState(0);
@@ -206,6 +210,7 @@ function Sessionintro() {
         document.getElementById("subsection3").style.display="block";
         document.getElementById("subsection4").style.display="none";
         document.getElementById("subsection5").style.display="none";
+        return Checkstatusskippable3;
     }
     function Sub4() {
         document.getElementById("subsection1").style.display="none";
@@ -213,6 +218,7 @@ function Sessionintro() {
         document.getElementById("subsection3").style.display="none";
         document.getElementById("subsection4").style.display="block";
         document.getElementById("subsection5").style.display="none";
+        return Checkstatusskippable4;
     }
     function Sub5() {
         document.getElementById("subsection1").style.display="none";
@@ -220,6 +226,7 @@ function Sessionintro() {
         document.getElementById("subsection3").style.display="none";
         document.getElementById("subsection4").style.display="none";
         document.getElementById("subsection5").style.display="block";
+        return Checkstatusskippable5;
     }
 
     function Checkstatusskippable1() {
@@ -285,13 +292,6 @@ function Sessionintro() {
         }
     }
 
-
-
-
-
-
-
-
     const paperStyle={padding :20,height:'92vh',width:480, margin:"20px auto",opacity:0.8}
     const avatarStyle={backgroundColor:'#1bbd7e'}
     const btnstyle={margin:'8px 0'}
@@ -338,7 +338,10 @@ function Sessionintro() {
                     <Paper><Button id="overviewBtn3" type="button" onClick={Sub3} disabled={!count3}><b>Section-3:</b>Dealing with Depression</Button></Paper><br></br>
                     <Paper><Button id="overviewBtn4" type="button" onClick={Sub4} disabled={!count4}><b>Section-4:</b>Learn Self Help</Button></Paper><br></br>
                     <Paper><Button id="overviewBtn5" type="button" onClick={Sub5} disabled={!count5}><b>Section-5:</b>Strengthen your Feelings</Button></Paper><br></br>
-                    <button className="btn btn-primary" onClick={changePage}>View Your Responses</button>
+                    <button className="btn btn-warning" onClick={changePage}>View Your Responses</button>
+                    <br></br>
+                    <br></br>
+                    <button className="btn btn-primary" onClick={viewAnalytics}>View your analytics</button>
                     <div className="card-body"  style={{display:"none",textAlign:"left"}} id="subsection1">
                         <div id="2">
 

@@ -86,6 +86,7 @@ function Dashboard(){
 			userId:pid
 		})
 			.then(function (response) {
+				window.location.href="/reminder";
 				console.log(response.data); })
 			.catch(function (error) {
 				console.log(error);

@@ -24,11 +24,12 @@ import Welcome1 from "./Components/Welcome";
 import Sessionintro from "./Components/sessionintro";
 import Quizfillup from "./Components/quiz/quizfillup";
 import Response from "./Components/response";
-import Mood from "./Components/mood";
+// import Mood from "./Components/mood";
 
 import Timetrack from "./Components/timeTrack";
 import {Navbar,Container,Nav} from "react-bootstrap";
 import FunVideo from "./Components/FunVideo";
+import Reminder from "./Components/reminder";
 
 function App() {
   return (
@@ -42,7 +43,7 @@ function App() {
             <Route path='/subsessionlist3' element={<Sessionlist3 />} />
             <Route path='/subsessionlist4' element={<Sessionlist4 />} />
             <Route path='/subsessionlist5' element={<Sessionlist5 />} />
-            <Route path='/mood' element={<Mood />} />
+            {/*<Route path='/mood' element={<Mood />} />*/}
             <Route path='/dashboard' element={<Dashboard />} />
             <Route path='/editProfile' element={<Info/>} />
             <Route path='/doctorDashboard' element={<DoctorDashboard/>} />
@@ -61,7 +62,7 @@ function App() {
             <Route path='/response' element={<Response />} />
             <Route path='/funvideo' element={<FunVideo />} />
             <Route path='/TimeTrack' element={<Timetrack />} />
-
+            <Route path='/reminder' element={<Reminder />} />
 
         </Routes>
         </BrowserRouter>
