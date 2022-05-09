@@ -53,8 +53,8 @@ const dataLine = {
 };
 
 const Analytics = () => {
-    const [compl,setCompl] = useState(0);
-    const [ncompl,setNcompl] = useState(0);
+    const [compl,setCompl] = useState(1);
+    const [ncompl,setNcompl] = useState(5);
 
 
     fetch("http://7d77-119-161-98-68.ngrok.io/analytics/23",{
@@ -122,8 +122,10 @@ const Analytics = () => {
                             <li><a className="dropdown-item" href="#" >Hindi</a></li>
                         </ul>
                     </div>
+                    {/*<Button href="patientTracker" variant="outline-warning" style={{backgroundColor:"gainsboro",marginLeft:"10px"}}>Back</Button>*/}
                 </Nav>
             </Container>
+
         </Navbar>
         <div style={{opacity:0.8}}>
         <Paper elevation={10} style={paperStyle}>

@@ -1,5 +1,3 @@
-import {Link} from 'react-router-dom'
-import {Navbar,Container,Nav} from "react-bootstrap"
 function Responses(){
     let pth = window.location.href;
     let x = pth.indexOf("=");
@@ -11,43 +9,39 @@ function Responses(){
         str = str + pth[k];
         k++;
     }
-    console.log(str);
     let pid = parseInt(str);
-    fetch("http://localhost:8084/ViewResponse/"+pid,{
+    fetch("http://localhost:8084/getTimestamp/"+pid,{
         method:"GET",
     })
         .then((response) => response.json())
         .then((responseData)=>{
             console.log(responseData);
-            document.getElementById("responseList").innerHTML='';
+            document.getElementById("activityList").innerHTML='';
             let sz = responseData.length;
-            console.log(sz);
             let html = '';
             for(let i=0;i<sz;i++) {
                 let row = '';
                 if (i % 2 == 0) {
-                    row = '<tr style="background-color:whitesmoke;">' +
-                        '<td>' + responseData[i].quesContent + '</td>' +
-                        '<td>' + responseData[i].sectionid + '</td>' +
-                        '<td>' + responseData[i].subsection_id + '</td>' +
-                        '<td>' + responseData[i].response + '</td>' +
+                    row = '<tr style="background-color:lavender;">' +
+                        '<td>' + responseData[i].loginTime + '</td>' +
+                        '<td>' + responseData[i].logoutTime + '</td>' +
+                        '<td>' + responseData[i].usefulSession + '</td>' +
                         '</tr>';
                 } else {
-                    row = '<tr style="background-color:lightcoral;">' +
-                        '<td>' + responseData[i].quesContent + '</td>' +
-                        '<td>' + responseData[i].sectionid + '</td>' +
-                        '<td>' + responseData[i].subsection_id + '</td>' +
-                        '<td>' + responseData[i].response + '</td>' +
+                    row = '<tr style="background-color:azure;">' +
+                        '<td>' + responseData[i].loginTime + '</td>' +
+                        '<td>' + responseData[i].logoutTime + '</td>' +
+                        '<td>' + responseData[i].usefulSession + '</td>' +
                         '</tr>';
                 }
                 html = html + row;
             }
-            document.getElementById("responseList").innerHTML = html;
+            document.getElementById("activityList").innerHTML = html;
         });
 
     function navigate()
     {
-        window.location.href = "/patientTracker?id="+pid;
+        window.location.href="/patientTracker?id="+pid;
     }
 
     function logout()
@@ -63,7 +57,7 @@ function Responses(){
             <span className="navbar-text">
             Push-D Logo
             </span>
-            <span>
+                        <span>
                 <button onClick={navigate} className="btn btn-success" style={{marginTop:"10px",backgroundColor:"white",color:"black"}}>Back</button>
             </span>
                         <span>
@@ -78,20 +72,17 @@ function Responses(){
                         <thead>
                         <tr>
                             <th>
-                                Question
+                                Login Time
                             </th>
                             <th>
-                                Section ID
+                                Logout Time
                             </th>
                             <th>
-                                Subsection ID
-                            </th>
-                            <th>
-                                Response
+                                Useful Time
                             </th>
                         </tr>
                         </thead>
-                        <tbody id="responseList">
+                        <tbody id="activityList">
 
                         </tbody>
                     </table>

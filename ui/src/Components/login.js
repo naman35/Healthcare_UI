@@ -55,31 +55,39 @@ const Login=()=>{
             role: "ROLE_PATIENT"
         })
             .then(function (response) {
-                console.log(response.data.id);
-                let res=response.data.id
-                let role=response.data.role;
-                console.log("res="+res);
-                axios.post('http://localhost:8084/addLoginTimestamp', {
-                    userId:res
-                })
-                    .then(function (response) {
-                        localStorage.setItem("id",response.data.userId);
-                        console.clear();
-                        console.log(response.data);
-                        if(role === "ROLE_PATIENT")
-                        {
-                            window.location.href = '/dashboard?id='+res ;
-                        }
-                        else {
-                            window.location.href = '/doctorDashboard?id='+res;
-                        }
+                console.log(response);
+                if(response.status == 200)
+                {
+                    let res=response.data.id
+                    let role=response.data.role;
+                    console.log("res="+res);
+                    axios.post('http://localhost:8084/addLoginTimestamp', {
+                        userId:res
                     })
-                    .catch(function (error) {
-                        console.log(error);
-                    });
+                        .then(function (response) {
+                            localStorage.setItem("id",response.data.userId);
+                            console.log(response.data);
+                            if(role === "ROLE_PATIENT")
+                            {
+                                window.location.href = '/dashboard?id='+res ;
+                            }
+                            else {
+                                window.location.href = '/doctorDashboard?id='+res;
+                            }
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+                else
+                {
+                    alert("Invalid Credentials");
+                    return;
+                }
             })
             .catch(function (error) {
-                console.log(error);
+                alert("Invalid Credentials");
+                return;
             });
 
      };

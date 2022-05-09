@@ -24,7 +24,7 @@ import Landingpage from "./Components/LandingPage/landingpage"
 import Sessionintro from "./Components/sessionintro";
 import Quizfillup from "./Components/quiz/quizfillup";
 import Response from "./Components/response";
-
+import Timetrack from "./Components/timeTrack";
 import {Navbar,Container,Nav} from "react-bootstrap";
 import FunVideo from "./Components/FunVideo";
 
@@ -57,6 +57,8 @@ function App() {
             <Route path='/sessionintro' element={<Sessionintro />} />
             <Route path='/response' element={<Response />} />
             <Route path='/funvideo' element={<FunVideo />} />
+            <Route path='/TimeTrack' element={<Timetrack />} />
+
 
         </Routes>
         </BrowserRouter>

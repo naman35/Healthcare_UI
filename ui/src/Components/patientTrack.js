@@ -37,18 +37,18 @@ function PatientTrack(){
     //     3:"Manage Excessive Worries",
     //     4:"Learn Self Compassion"
     // }
-    // fetch("http://localhost:8084/patientDetails/23",{
-    //     method:"GET",
-    // })
-    //     .then((response) => response.json())
-    //     .then((responseData)=>{
-    //           console.log(responseData);
-    //         document.getElementById("FirstName").value = responseData.username;
-    //         document.getElementById("LastName").value = responseData.username;
-    //         document.getElementById("Address").value = responseData.id;
-    //         document.getElementById("ContactNo").value = responseData.role;
-    //         document.getElementById("age").value = responseData.id;
-    //     })
+    fetch("http://localhost:8084/patientDetails/"+pid,{
+        method:"GET",
+    })
+        .then((response) => response.json())
+        .then((responseData)=>{
+              console.log(responseData);
+            document.getElementById("FirstName").value = responseData.username;
+            document.getElementById("LastName").value = responseData.username;
+            document.getElementById("Address").value = responseData.id;
+            document.getElementById("ContactNo").value = responseData.role;
+            document.getElementById("age").value = responseData.id;
+        })
 
     // let lst = ["Understanding depression","Enhancing Self Care Motivation","Activate: Baby Steps to Move ahead","Manage Excessive Worries","Learn Self Compassion"];
     // while(j<chk.length){
@@ -113,22 +113,39 @@ function PatientTrack(){
             }
         }
         console.log(res);
+        fetch("http://localhost:8084/skippable/"+pid+"/"+res,{
+            method:"POST",
+            headers:{
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
+            .then((response) => response.json())
+            .then((responseData)=>{
+                console.log(responseData);
+                document.getElementById("responseList").innerHTML='';
+            });
     }
 
     function seeResponse()
     {
-        window.location.href = '/response?id=23';
+        window.location.href = '/response?id='+pid;
         ///change this 23 to pid getting from url
     }
 
     function seeAnalytics()
     {
-        window.location.href = '/analytics?id=1';
+        window.location.href = '/analytics?id='+pid;
     }
 
     function seeActivity()
     {
-        // window.location.href = '/timeTrack';
+        window.location.href = '/timeTrack?id='+pid;
+    }
+
+    function logout()
+    {
+        window.location.href = "/login";
     }
 
     return <>
@@ -140,7 +157,7 @@ function PatientTrack(){
             Push-D Logo
             </span>
                         <span>
-                <button id-type="button" className="btn btn-success" style={{marginTop:"10px",backgroundColor:"white",color:"black"}}>Logout</button>
+                <button id-type="button" onClick={logout} className="btn btn-success" style={{marginTop:"10px",backgroundColor:"white",color:"black"}}>Logout</button>
             </span>
                     </div>
                 </nav>
@@ -152,7 +169,7 @@ function PatientTrack(){
                             <a className="nav-link" href="#" style={{color:"black"}}>Patient Details</a>
                         </li>
                         <li className="nav-item" id="sectionsTab" onClick={sections}>
-                            <a className="nav-link" href="#"  style={{color:"black"}}>Sections performed</a>
+                            <a className="nav-link" href="#"  style={{color:"black"}}>Sections skippable</a>
                         </li>
                         <li className="nav-item" id="chatTab"  onClick={chat}>
                             <a className="nav-link" href="#" style={{color:"black"}}>Chat</a>

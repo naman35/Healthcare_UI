@@ -77,6 +77,7 @@ const Signup=()=>{
                     })
                         .then(function(response){
                             console.log(response.data);
+                            window.location.href="/login";
                     })
                     // let res =  response.data;
                     // if(res.role === "ROLE_PATIENT")
