@@ -1,10 +1,37 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Built With
+React.js
+JavaScript
+Styled-components
+# Usage Prerequisites
+node
+npm
+
+
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+Clone the repository to your local machine
+
+```
+$ git clone https://github.com/naman35/Healthcare_UI.git
+```
+
+# Change into the project directory
+
+```
+$ cd Healthcare_UI/ui
+```
+
+# Install dependencies
+
+```
+$ npm install
+```
 
 ### `npm start`
 
