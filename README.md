@@ -1,4 +1,8 @@
 # Getting Started with Create React App
+x-special/nautilus-clipboard
+copy
+file:///home/sanphire/Desktop/Group%202.3%20Healthcare(Redesigning%20of%20PUSH-D)
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 # Built With
