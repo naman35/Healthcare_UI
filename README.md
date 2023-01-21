@@ -1,8 +1,4 @@
 # Getting Started with Create React App
-x-special/nautilus-clipboard
-copy
-file:///home/sanphire/Desktop/Group%202.3%20Healthcare(Redesigning%20of%20PUSH-D)
-
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 # Built With
@@ -13,7 +9,10 @@ Styled-components
 node
 npm
 
+# Output:
 
+
+https://user-images.githubusercontent.com/22000431/213864359-0ceb01a7-0c66-42f2-a2c4-fe8abed79a30.mp4
 
 ## Available Scripts
 
